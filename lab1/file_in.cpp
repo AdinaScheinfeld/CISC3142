@@ -32,6 +32,9 @@ void pricePerBrand(vector<string> brands, vector<float> prices);
 // declare pricePerCategory function
 void pricePerCategory(vector<string> categories, vector<float> prices);
 
+// declare skusPerYear function
+void skusPerYear(vector<int> years, vector<int> skus);
+
 int main()
 {
   // define vector variables
@@ -118,6 +121,9 @@ int main()
 
   // call pricePerCategory function
   pricePerCategory(vCategory, vPrice);
+
+  // call skusPerYear function
+  skusPerYear(vYear, vSKU);
 
   cout << endl;
 }
@@ -208,6 +214,56 @@ void pricePerCategory(vector<string> categories, vector<float> prices)
   for (itr = averages.begin(); itr != averages.end(); ++itr)
   {
     cout << '\t' << itr->first << '\t' << '\t' << itr->second << '\n';
+  }
+  cout << endl;
+}
+
+// function to count SKUs per year
+void skusPerYear(vector<int> years, vector<int> skus)
+{
+  // declare map to hold the years and skus
+  map<int, vector<int> > skuMap;
+
+  // add each year to the map
+  for (int i = 0; i < years.size(); i++)
+  {
+    skuMap.insert(pair<int, vector<int> >(years[i], vector<int>()));
+  }
+
+  // iterate through the map
+  map<int, vector<int> >::iterator itr;
+  for (itr = skuMap.begin(); itr != skuMap.end(); ++itr)
+  {
+    // set y to be the year currently being iterated over
+    int y = itr->first;
+
+    // calculate the count for each year and add the skus to the vector in the map
+    for (int j = 0; j < years.size(); j++)
+    {
+      if (years[j] == y)
+      {
+        itr->second.push_back(skus[j]);
+      }
+    }
+  }
+
+  // print the years, the skus, and the count for each year to the console
+  cout << "\tYear\tSkus\n";
+  for (itr = skuMap.begin(); itr != skuMap.end(); ++itr)
+  {
+    int count = 0;
+
+    // print each year to the console
+    cout << '\t' << itr->first << '\t';
+
+    // print the skus for each year to the console
+    for (int i = 0; i < itr->second.size(); i++)
+    {
+      cout << itr->second.at(i) << ' ';
+      count++;
+    }
+    // print the count to the console
+    cout << ' ' << "(Count: " << count << ")\n";
   }
   cout << endl;
 }
