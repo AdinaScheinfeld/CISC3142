@@ -1,3 +1,6 @@
+// Adina Scheinfeld
+// CISC 3142
+
 // This file shows basic functions of reading in a CSV file using C++98
 // Please add your name to your code!
 
@@ -11,18 +14,19 @@ All programs must be able to compile in C++98 standard (the default version on L
 
 */
 
+// include required libraries
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <vector>
 #include <fstream>
 
+// define namespace
 using namespace std;
 
 int main()
 {
-
-  // define variables
+  // define vector variables
   string sku, brand, category, year, price;
   vector<int> vSKU;
   vector<string> vBrand;
@@ -30,23 +34,23 @@ int main()
   vector<int> vYear;
   vector<float> vPrice;
 
+  // open the file
   ifstream in_stream;
-  in_stream.open("data.csv"); // opening the file.
+  in_stream.open("data.csv");
 
+  // if the file is open
   if (!in_stream.fail())
-  { // if the file is open
-
+  {
+    // declare variable to contain the current line
     string line;
 
     // ignore the header line when reading in the data
     getline(in_stream, line);
 
+    // while the end of the file has not been reached
     while (getline(in_stream, line))
-    { // while the end of file is NOT reached
-
-      // Fields: sku,brand,category,year,price
-
-      // declare variables
+    {
+      // declare variables to hold the data in each column
       int iSKU;
       string sBrand;
       string sCategory;
@@ -70,40 +74,17 @@ int main()
       vCategory.push_back(sCategory);
       vYear.push_back(iYear);
       vPrice.push_back(fPrice);
-
-      //   getline(in_stream, sku, ',');
-      //   stringstream ssku(sku);
-      //   int iSKU = 0;
-      //   ssku >> iSKU;
-      //   vSKU.push_back(iSKU);
-
-      //   getline(in_stream, brand, ',');
-      //   vBrand.push_back(brand);
-
-      //   getline(in_stream, category, ',');
-      //   vCategory.push_back(category);
-
-      //   getline(in_stream, year, ',');
-      //   stringstream syear(year);
-      //   int iYear;
-      //   syear >> iYear;
-      //   vYear.push_back(iYear);
-
-      //   getline(in_stream, price, '\n');
-      //   stringstream sprice(price);
-      //   float fPrice;
-      //   sprice >> fPrice;
-      //   vPrice.push_back(fPrice);
     }
-
-    in_stream.close(); // closing the file cout << "Number of entries: " << i-1 << endl;
+    // close the file cout << "Number of entries: " << i-1 << endl;
+    in_stream.close();
   }
+
   else
   {
     cout << "Unable to open file";
   }
 
-  // output values
+  // output header values to the console
   cout << "SKU"
        << "\t"
        << "Brand"
@@ -114,6 +95,7 @@ int main()
        << "\t"
        << "Price" << endl;
 
+  // output data values to the console
   for (int j = 0; j < vSKU.size(); j++)
   {
     cout << vSKU[j] << "\t" << vBrand[j] << "\t   " << vCategory[j] << "\t\t" << vYear[j] << "\t" << vPrice[j] << endl;
