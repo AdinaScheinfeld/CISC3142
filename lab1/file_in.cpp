@@ -16,6 +16,7 @@ All programs must be able to compile in C++98 standard (the default version on L
 
 // include required libraries
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
@@ -27,13 +28,13 @@ All programs must be able to compile in C++98 standard (the default version on L
 using namespace std;
 
 // declare pricePerBrand function
-void pricePerBrand(vector<string> brands, vector<float> prices);
+void pricePerBrand(vector<string> brands, vector<float> prices, ofstream& out_stream);
 
 // declare pricePerCategory function
-void pricePerCategory(vector<string> categories, vector<float> prices);
+void pricePerCategory(vector<string> categories, vector<float> prices, ofstream& out_stream);
 
 // declare skusPerYear function
-void skusPerYear(vector<int> years, vector<int> skus);
+void skusPerYear(vector<int> years, vector<int> skus, ofstream& out_stream);
 
 int main()
 {
@@ -45,9 +46,13 @@ int main()
   vector<int> vYear;
   vector<float> vPrice;
 
-  // open the file
+  // open the input file file
   ifstream in_stream;
   in_stream.open("data.csv");
+
+  // open the output file
+  ofstream out_stream;
+  out_stream.open("output.txt");
 
   // if the file is open
   if (!in_stream.fail())
@@ -87,49 +92,51 @@ int main()
       vPrice.push_back(fPrice);
     }
 
-    // close the file cout << "Number of entries: " << i-1 << endl;
+    // close the file
     in_stream.close();
   }
 
   else
   {
-    cout << "Unable to open file";
+    out_stream << "Unable to open file";
   }
 
-  // output header values to the console
-  cout << "SKU"
+  // write the header values to the output file
+  out_stream << "SKU"
        << "\t"
        << "Brand"
        << "\t"
        << "Category"
-       << "\t"
+       << "\t\t"
        << "Year"
        << "\t"
        << "Price" << endl;
 
-  // output data values to the console
+  // write the data values to the output file
   for (int j = 0; j < vSKU.size(); j++)
   {
-    cout << vSKU[j] << "\t" << vBrand[j] << "\t   " << vCategory[j] << "\t\t" << vYear[j] << "\t" << vPrice[j] << endl;
+    out_stream << vSKU[j] << "\t" << vBrand[j] << "\t   " << vCategory[j] << "\t\t" << vYear[j] << "\t" << vPrice[j] << endl;
   }
 
   // print a blank line
-  cout << '\n';
+  out_stream << '\n';
 
   // call pricePerBrand function
-  pricePerBrand(vBrand, vPrice);
+  pricePerBrand(vBrand, vPrice, out_stream);
 
   // call pricePerCategory function
-  pricePerCategory(vCategory, vPrice);
+  pricePerCategory(vCategory, vPrice, out_stream);
 
   // call skusPerYear function
-  skusPerYear(vYear, vSKU);
+  skusPerYear(vYear, vSKU, out_stream);
 
-  cout << endl;
+  out_stream << endl;
+
+  out_stream.close();
 }
 
 // function to calculate price per brand
-void pricePerBrand(vector<string> brands, vector<float> prices)
+void pricePerBrand(vector<string> brands, vector<float> prices, ofstream& out_stream)
 {
   // declare map to hold the average per brand
   map<string, float> averages;
@@ -164,17 +171,17 @@ void pricePerBrand(vector<string> brands, vector<float> prices)
       it->second = sum / count;
   }
 
-  // print the average for each brand to the console
-  cout << "\tBrand\tAverage\n";
+  // write the average for each brand to the output file
+ out_stream << "\tBrand\tAverage\n";
   for (itr = averages.begin(); itr != averages.end(); ++itr)
   {
-    cout << '\t' << itr->first << '\t' << itr->second << '\n';
+   out_stream << '\t' << itr->first << '\t' << itr->second << '\n';
   }
-  cout << endl;
+  out_stream << endl;
 }
 
 // function to calculate price per category
-void pricePerCategory(vector<string> categories, vector<float> prices)
+void pricePerCategory(vector<string> categories, vector<float> prices, ofstream& out_stream)
 {
   // declare map to hold the average per category
   map<string, float> averages;
@@ -209,17 +216,17 @@ void pricePerCategory(vector<string> categories, vector<float> prices)
       it->second = sum / count;
   }
 
-  // print the average for each category to the console
-  cout << "\tCategory\tAverage\n";
+  // write the average for each category to the output file
+  out_stream << "\tCategory\t\tAverage\n";
   for (itr = averages.begin(); itr != averages.end(); ++itr)
   {
-    cout << '\t' << itr->first << '\t' << '\t' << itr->second << '\n';
+    out_stream << '\t' << itr->first << '\t' << '\t' << itr->second << '\n';
   }
-  cout << endl;
+  out_stream << endl;
 }
 
 // function to count SKUs per year
-void skusPerYear(vector<int> years, vector<int> skus)
+void skusPerYear(vector<int> years, vector<int> skus, ofstream& out_stream)
 {
   // declare map to hold the years and skus
   map<int, vector<int> > skuMap;
@@ -247,23 +254,23 @@ void skusPerYear(vector<int> years, vector<int> skus)
     }
   }
 
-  // print the years, the skus, and the count for each year to the console
-  cout << "\tYear\tSkus\n";
+  // write the years, the skus, and the count for each year to the output file
+  out_stream << "\tYear\tSkus\n";
   for (itr = skuMap.begin(); itr != skuMap.end(); ++itr)
   {
     int count = 0;
 
-    // print each year to the console
-    cout << '\t' << itr->first << '\t';
+    // write each year to the output file
+    out_stream << '\t' << itr->first << '\t';
 
-    // print the skus for each year to the console
+    // write the skus for each year to the output file
     for (int i = 0; i < itr->second.size(); i++)
     {
-      cout << itr->second.at(i) << ' ';
+      out_stream << itr->second.at(i) << ' ';
       count++;
     }
-    // print the count to the console
-    cout << ' ' << "(Count: " << count << ")\n";
+    // write the count to the output file
+    out_stream << ' ' << "(Count: " << count << ")\n";
   }
-  cout << endl;
+  out_stream << endl;
 }
