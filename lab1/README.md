@@ -29,7 +29,7 @@ All code compiles in C++98 standard.
 ### How to use?
 
 - Input: A CSV file with rows of data corresponding to metrics including sku, brand, category, year, and price.
-- Output: A text file containing the data from the input file, a list of brands with each brand's associated average price, a list of categories with each brand's associated average price, and a list of years with each year's associated SKUs and a count of the SKUs associated with each year. 
+- Output: A text file containing the data from the input file, a list of brands with each brand's associated average price, a list of categories with each brand's associated average price, and a list of years with each year's associated SKUs and a count of the SKUs associated with each year. Please note, output renders best in a plain text editor (Ex: TextEdit on Mac, NotePad on Windows).
 - All code runs from the project root under the default ```main``` branch with the command ```make lab1```.
 
 ### Testing
