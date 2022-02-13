@@ -1,17 +1,12 @@
 // Adina Scheinfeld
 // CISC 3142
 
-// This file shows basic functions of reading in a CSV file using C++98
-// Please add your name to your code!
-
-/* Homework Objective: fix this program to match the requirements listed:
-  1. successfully reads all lines of the input file
-  2. calculate the average price per brand, average price per category
-  3. writes to an output file
-  4. for each unique year, list the count of skus and also print out the skus as a list i.e. 2000 (3): 111, 211, 311 and make a new line per year.
-
-All programs must be able to compile in C++98 standard (the default version on Linux Machine). That means you cannot use the new features of C++11! :(
-
+/*
+  This code reads in data from a CSV file, data.csv, and outputs the data to an output file, output.txt.
+  The data file contains rows of data with metrics including sku, brand, category, year, and price.
+  The code also calculates and prints to the output file the average price per brand and the average price per category.
+  Additionally, the code prints all the skus for each year and the count of the skus for each year to the output file. 
+  The code in this file compiles in C++98 using the command make lab1
 */
 
 // include required libraries
@@ -36,6 +31,8 @@ void pricePerCategory(vector<string> categories, vector<float> prices, ofstream&
 // declare skusPerYear function
 void skusPerYear(vector<int> years, vector<int> skus, ofstream& out_stream);
 
+
+// main function
 int main()
 {
   // define vector variables
@@ -46,7 +43,7 @@ int main()
   vector<int> vYear;
   vector<float> vPrice;
 
-  // open the input file file
+  // open the input file 
   ifstream in_stream;
   in_stream.open("data.csv");
 
@@ -135,6 +132,7 @@ int main()
   out_stream.close();
 }
 
+
 // function to calculate price per brand
 void pricePerBrand(vector<string> brands, vector<float> prices, ofstream& out_stream)
 {
@@ -180,6 +178,7 @@ void pricePerBrand(vector<string> brands, vector<float> prices, ofstream& out_st
   out_stream << endl;
 }
 
+
 // function to calculate price per category
 void pricePerCategory(vector<string> categories, vector<float> prices, ofstream& out_stream)
 {
@@ -224,6 +223,7 @@ void pricePerCategory(vector<string> categories, vector<float> prices, ofstream&
   }
   out_stream << endl;
 }
+
 
 // function to count SKUs per year
 void skusPerYear(vector<int> years, vector<int> skus, ofstream& out_stream)
