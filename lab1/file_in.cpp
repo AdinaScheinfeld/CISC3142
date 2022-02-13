@@ -219,7 +219,7 @@ void pricePerCategory(vector<string> categories, vector<float> prices, ofstream&
   out_stream << "\tCategory\t\tAverage\n";
   for (itr = averages.begin(); itr != averages.end(); ++itr)
   {
-    out_stream << '\t' << itr->first << '\t' << '\t' << itr->second << '\n';
+    out_stream << '\t' << itr->first << "\t\t" << itr->second << '\n';
   }
   out_stream << endl;
 }
