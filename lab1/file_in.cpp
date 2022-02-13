@@ -11,6 +11,7 @@
 
 // include required libraries
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -112,7 +113,12 @@ int main()
   // write the data values to the output file
   for (int j = 0; j < vSKU.size(); j++)
   {
-    out_stream << vSKU[j] << "\t" << vBrand[j] << "\t   " << vCategory[j] << "\t\t" << vYear[j] << "\t" << vPrice[j] << endl;
+    out_stream << fixed << setprecision(2) << 
+    vSKU[j] << "\t" << 
+    vBrand[j] << "\t   " << 
+    vCategory[j] << "\t\t" << 
+    vYear[j] << "\t" << 
+    vPrice[j] << endl;
   }
 
   // print a blank line
@@ -173,7 +179,7 @@ void pricePerBrand(vector<string> brands, vector<float> prices, ofstream& out_st
  out_stream << "\tBrand\tAverage\n";
   for (itr = averages.begin(); itr != averages.end(); ++itr)
   {
-   out_stream << '\t' << itr->first << '\t' << itr->second << '\n';
+   out_stream << fixed << setprecision(2) << '\t' << itr->first << '\t' << itr->second << '\n';
   }
   out_stream << endl;
 }
@@ -219,7 +225,7 @@ void pricePerCategory(vector<string> categories, vector<float> prices, ofstream&
   out_stream << "\tCategory\t\tAverage\n";
   for (itr = averages.begin(); itr != averages.end(); ++itr)
   {
-    out_stream << '\t' << itr->first << "\t\t" << itr->second << '\n';
+    out_stream << fixed << setprecision(2) << '\t' << itr->first << "\t\t" << itr->second << '\n';
   }
   out_stream << endl;
 }
@@ -266,7 +272,7 @@ void skusPerYear(vector<int> years, vector<int> skus, ofstream& out_stream)
     // write the skus for each year to the output file
     for (int i = 0; i < itr->second.size(); i++)
     {
-      out_stream << itr->second.at(i) << ' ';
+      out_stream << setw(3) << setfill('0') << itr->second.at(i) << ' ';
       count++;
     }
     // write the count to the output file
