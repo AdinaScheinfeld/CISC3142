@@ -2,13 +2,13 @@
 
 ## Lab 1
 <details>
-    <summary>Click to expand</summary>
+<summary>Click to expand</summary>
 
-    ### Problem Description
+### Problem Description
 
-    ### Problem Solving Techniques
+### Problem Solving Techniques
 
-    ### How to use?
+### How to use?
 
 </details>
 
