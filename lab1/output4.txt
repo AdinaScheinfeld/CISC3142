@@ -1,0 +1,24 @@
+SKU	Brand	Category		Year	Price
+1	QWE	   A		2022	54.00
+10	IOP	   A		2022	33.22
+11	QWE	   A		2022	6.89
+100	IOP	   B		2022	4.33
+101	QWE	   B		2022	33.98
+110	IOP	   B		2022	202.00
+111	QWE	   C		2022	87.54
+0	IOP	   C		2022	432.00
+2	QWE	   C		2022	43.12
+
+	Brand	Average
+	IOP	167.89
+	QWE	45.11
+
+	Category		Average
+	A		31.37
+	B		80.10
+	C		187.55
+
+	Year	Skus
+	2022	001 010 011 100 101 110 111 000 002  (Count: 9)
+
+
