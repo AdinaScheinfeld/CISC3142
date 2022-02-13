@@ -31,3 +31,12 @@ All code compiles in C++98 standard.
 - Input: A CSV file with rows of data corresponding to metrics including sku, brand, category, year, and price.
 - Output: A text file containing the data from the input file, a list of brands with each brand's associated average price, a list of categories with each brand's associated average price, and a list of years with each year's associated SKUs and a count of the SKUs associated with each year. 
 - All code runs from the project root under the default ```main``` branch with the command ```make lab1```.
+
+### Testing
+
+Code was tested on 5 input files.
+1. [data.csv](data.csv) - The original input file; produces [output.txt](output.txt).
+2. [data1.csv](data1.csv) - An input file containing random skus, brands, categories, years, and prices; produces [output1.txt](output1.txt).
+3. [data2.csv](data2.csv) - An input file containing random skus, brands, categories, years, and prices, where all the brands are the same; produces [output2.txt](output2.txt).
+4. [data3.csv](data3.csv) - An input file containing random skus, brands, categories, years, and prices, where all the categories are the same; produces [output3.txt](output3.txt). 
+5. [data4.csv](data4.csv) - An input file containing random skus, brands, categories, years, and prices, where all the years are the same; produces [output4.txt](output4.txt).
