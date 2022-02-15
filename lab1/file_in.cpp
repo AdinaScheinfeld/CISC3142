@@ -6,7 +6,7 @@
   The data file contains rows of data with metrics including sku, brand, category, year, and price.
   The code also calculates and prints to the output file the average price per brand and the average price per category.
   Additionally, the code prints all the skus for each year and the count of the skus for each year to the output file. 
-  The code in this file compiles in C++98 using the command make lab1
+  The code in this file compiles in C++98 using the command make lab1.
 */
 
 // include required libraries
@@ -94,6 +94,7 @@ int main()
     in_stream.close();
   }
 
+  // if the file cannot be opened, print an error message to the console
   else
   {
     out_stream << "Unable to open file";
@@ -133,8 +134,10 @@ int main()
   // call skusPerYear function
   skusPerYear(vYear, vSKU, out_stream);
 
+  // indicate the end of the output
   out_stream << endl;
 
+  // close the output file
   out_stream.close();
 }
 
@@ -142,7 +145,7 @@ int main()
 // function to calculate price per brand
 void pricePerBrand(vector<string> brands, vector<float> prices, ofstream& out_stream)
 {
-  // declare map to hold the average per brand
+  // declare map to hold the average price per brand
   map<string, float> averages;
 
   // add each brand to the map
@@ -185,7 +188,7 @@ void pricePerBrand(vector<string> brands, vector<float> prices, ofstream& out_st
 }
 
 
-// function to calculate price per category
+// function to calculate average price per category
 void pricePerCategory(vector<string> categories, vector<float> prices, ofstream& out_stream)
 {
   // declare map to hold the average per category
