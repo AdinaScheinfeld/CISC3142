@@ -11,19 +11,19 @@
 using namespace std;
 
 
-// declare variables
-string sku, brand, category, year, price;
-vector<int> vSKU;
-vector<string> vBrand;
-vector<string> vCategory;
-vector<int> vYear;
-vector<float> vPrice;
+// // declare variables
+// string sku, brand, category, year, price;
+// vector<int> vSKU;
+// vector<string> vBrand;
+// vector<string> vCategory;
+// vector<int> vYear;
+// vector<float> vPrice;
 
-int iSKU;
-string sBrand;
-string sCategory;
-int iYear;
-float fPrice;
+// int iSKU;
+// string sBrand;
+// string sCategory;
+// int iYear;
+// float fPrice;
 
 
 // declare pricePerBrand function
