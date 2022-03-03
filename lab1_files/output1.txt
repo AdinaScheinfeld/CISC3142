@@ -1,28 +1,26 @@
 SKU	Brand	Category		Year	Price
-999	HIJ	   H		2021	10.00
-998	SKH	   E		2021	20.00
-997	ASC	   P		2021	50.00
-996	UDD	   P		2022	20.00
-995	SKH	   P		2023	20.00
-994	HIJ	   H		2022	50.00
-993	UDD	   H		2022	55.00
-992	HIJ	   E		2021	82.00
-991	ASC	   E		2023	100.00
+999	HIJ			H			2021	10.00
+998	SKH			E			2021	20.00
+997	ASC			P			2021	50.00
+996	UDD			P			2022	20.00
+995	SKH			P			2023	20.00
+994	HIJ			H			2022	50.00
+993	UDD			H			2022	55.00
+992	HIJ			E			2021	82.00
+991	ASC			E			2023	100.00
 
-	Brand	Average
-	ASC	75.00
-	HIJ	47.33
-	SKH	20.00
-	UDD	37.50
+Brand	Average
+ASC		75.00
+HIJ		47.33
+SKH		20.00
+UDD		37.50
 
-	Category		Average
-	E		67.33
-	H		38.33
-	P		30.00
+Category	Average
+E			67.33
+H			38.33
+P			30.00
 
-	Year	Skus
-	2021	999 998 997 992  (Count: 4)
-	2022	996 994 993  (Count: 3)
-	2023	995 991  (Count: 2)
-
-
+Year	Skus
+2021	999 998 997 992 (Count: 4)
+2022	996 994 993 (Count: 3)
+2023	995 991 (Count: 2)
