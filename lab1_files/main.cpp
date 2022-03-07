@@ -21,6 +21,7 @@
 #include <map>
 #include <iterator>
 #include <typeinfo>
+#include <algorithm>
 #include "header_file.h"
 //#include "functions.cpp"
 
