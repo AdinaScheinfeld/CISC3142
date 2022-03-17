@@ -36,8 +36,20 @@ int main() {
     else if(operatorInput == 's') {o = Calculator::Operators::r;}
     else {o = Calculator::Operators::n;}
 
+    // get operands from user
+    double x = 0;
+    double y = 0;
+
+    printf("Please enter an operand: ");
+    std::cin >> x;
+
+    if(o != Calculator::Operators::s && o != Calculator::Operators::n) {
+        printf("Please enter another operand: ");
+        std::cin >> y;
+    }
+
     // create instance of Calculator
-    Calculator myCalculator(o, 6.1, 2);
+    Calculator myCalculator(o, x, y);
 
     // pass Calculator to calculate()
     double result = calculate(myCalculator);
