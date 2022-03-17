@@ -5,6 +5,10 @@
 
 int main() {
 
+    // create file to hold output
+    FILE * pFile;
+    pFile = fopen("output.txt", "a");
+
     // declare variable to hold the operator
     Calculator::Operators o;
 
@@ -39,7 +43,10 @@ int main() {
     double result = calculate(myCalculator);
 
     // display result
-    printf("Your result is: %.2f\n.", result);
+    fprintf(pFile, "Your result is: %.2f.\n", result);
+
+    // close the output file
+    fclose(pFile);
 
     // indicate successful termination
     return 0;
