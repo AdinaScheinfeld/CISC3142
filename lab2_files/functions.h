@@ -7,4 +7,7 @@ double calculate(Calculator myCalculator);
 // createCalculator() function
 Calculator createCalculator();
 
+// printOutput() function
+void printOutput(double result);
+
 #endif

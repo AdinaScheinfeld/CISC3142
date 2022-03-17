@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+// calculate function
 double calculate(Calculator myCalculator) {
 
     // declare double to hold result
@@ -62,6 +63,7 @@ double calculate(Calculator myCalculator) {
     return result;
 }
 
+// create a Calculator
 Calculator createCalculator() {
 
     // declare variable to hold the operator
@@ -107,4 +109,17 @@ Calculator createCalculator() {
     Calculator myCalculator(o, x, y);
 
     return myCalculator;
+}
+
+void printOutput(double result) {
+
+    // create file to hold output
+    FILE * pFile;
+    pFile = fopen("output.txt", "a");
+
+    // display result
+    fprintf(pFile, "Your result is: %.2f.\n", result);
+
+    // close the output file
+    fclose(pFile);
 }
