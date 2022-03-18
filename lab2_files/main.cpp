@@ -5,14 +5,22 @@
 
 int main() {
 
-    // create a Calculator using createCalculator() function
-    Calculator myCalculator = createCalculator();
+    bool inRepeat = false;
+    double result = 0;
 
-    // pass Calculator to calculate()
-    double result = calculate(myCalculator);
+    do {
+        // create a Calculator using createCalculator() function
+        Calculator myCalculator = createCalculator(inRepeat, result);
 
-    // print result to file
-    printOutput(result);
+        // pass Calculator to calculate()
+        result = calculate(myCalculator);
+
+        // print result to file
+        printOutput(result);
+
+        inRepeat = repeat(result);
+
+    } while(inRepeat == true);
 
     // indicate successful termination
     return 0;

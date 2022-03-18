@@ -5,9 +5,11 @@
 double calculate(Calculator myCalculator);
 
 // createCalculator() function
-Calculator createCalculator();
+Calculator createCalculator(bool inRepeat, double result);
 
 // printOutput() function
 void printOutput(double result);
+
+bool repeat(double result);
 
 #endif

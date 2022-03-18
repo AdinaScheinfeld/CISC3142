@@ -22,7 +22,7 @@ struct Calculator {
     double result;
 
     // Calculator constructor
-    Calculator(Operators op0, double x0, double y0=0) {
+    Calculator(Operators op0, double x0, double y0) {
         op = op0;
         x = x0;
         y = y0;

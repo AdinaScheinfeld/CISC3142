@@ -64,7 +64,7 @@ double calculate(Calculator myCalculator) {
 }
 
 // create a Calculator
-Calculator createCalculator() {
+Calculator createCalculator(bool inRepeat, double result) {
 
     // declare variable to hold the operator
     Calculator::Operators o;
@@ -94,13 +94,29 @@ Calculator createCalculator() {
     else {o = Calculator::Operators::n;}
 
     // get operand(s) from user
-    double x = 0;
+    double x = result;
     double y = 0;
 
-    printf("Please enter an operand: ");
-    std::cin >> x;
+    if((inRepeat == false) || 
+    (inRepeat == true && o == Calculator::Operators::a) ||
+    (inRepeat == true && o == Calculator::Operators::s) ||
+    (inRepeat == true && o == Calculator::Operators::m) ||
+    (inRepeat == true && o == Calculator::Operators::d)) {
+        printf("Please enter an operand: ");
 
-    if(o != Calculator::Operators::s && o != Calculator::Operators::n) {
+        if(inRepeat == false) {
+            std::cin >> x;
+        }
+        else {
+            std::cin >> y;
+        }
+    }
+    printf("%f %f", x, y);
+
+    if((inRepeat == false && o == Calculator::Operators::a) || 
+    (inRepeat == false && o == Calculator::Operators::s) ||
+    (inRepeat == false && o == Calculator::Operators::m) ||
+    (inRepeat == false && o == Calculator::Operators::d)) {
         printf("Please enter another operand: ");
         std::cin >> y;
     }
@@ -122,4 +138,28 @@ void printOutput(double result) {
 
     // close the output file
     fclose(pFile);
+}
+
+bool repeat(double result) {
+
+    bool inRepeat;
+    char repeatVal;
+
+    printf("Would you like to perform another operation (y/n)? ");
+
+    std::cin >> repeatVal;
+
+    while(repeatVal != 'y' && repeatVal != 'n') {
+        printf("Please enter y for yes or n for no: ");
+        std::cin >> repeatVal;
+    }
+
+    if(repeatVal == 'n') {
+        inRepeat = false;
+        printf("Ok, thank you for using the calculator.\n");
+    }
+    else {
+        inRepeat = true;
+    }
+    return inRepeat;   
 }
