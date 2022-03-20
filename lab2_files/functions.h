@@ -2,7 +2,7 @@
 #define functions_h
 
 // calculate() function
-double calculate(Calculator myCalculator);
+std::map<std::string, double> calculate(Calculator myCalculator);
 
 // createCalculator() function
 Calculator createCalculator(bool inRepeat, double result);

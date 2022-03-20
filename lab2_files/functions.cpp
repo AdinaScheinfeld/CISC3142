@@ -1,12 +1,17 @@
 #include "structures.h"
 
 #include <iostream>
+#include <map>
 
 // calculate function
-double calculate(Calculator myCalculator) {
+std::map<std::string, double> calculate(Calculator myCalculator) {
 
     // declare double to hold result
     double result;
+
+    double opDouble = 6;
+
+    std::map<std::string, double> myMap;
 
     // switch on the calculator's operator
     switch(myCalculator.op) {
@@ -14,16 +19,19 @@ double calculate(Calculator myCalculator) {
         // addition
         case Calculator::Calculator::Operators::a:
             result = myCalculator.x + myCalculator.y;
+            opDouble = 0;
             break;
 
         // subtraction
         case Calculator::Operators::s:
             result = myCalculator.x - myCalculator.y;
+            opDouble = 1;
             break;
 
         // multiplication
         case Calculator::Operators::m:
             result = myCalculator.x * myCalculator.y;
+            opDouble = 2;
             break;
 
         // division
@@ -35,6 +43,8 @@ double calculate(Calculator myCalculator) {
             else {
                 result = myCalculator.x / myCalculator.y;
             }
+
+            opDouble = 3;
             break;
 
         // square root
@@ -46,11 +56,14 @@ double calculate(Calculator myCalculator) {
             else {
                 result = sqrt(myCalculator.x);
             }
+
+            opDouble = 4;
             break;
         
         // negate
         case Calculator::Operators::n:
             result = -1 * myCalculator.x;
+            opDouble = 5;
             break;
 
         // default
@@ -58,9 +71,14 @@ double calculate(Calculator myCalculator) {
             //result = null;
             printf("error");
     }
+
+    // return x, y, op and result
+    myMap.insert(std::pair<std::string, double>("x", myCalculator.x));
+    myMap.insert(std::pair<std::string, double>("y", myCalculator.y));
+    myMap.insert(std::pair<std::string, double>("operator", opDouble));
+    myMap.insert(std::pair<std::string, double>("result", result));
     
-    // return the result
-    return result;
+    return myMap;
 }
 
 // create a Calculator
@@ -111,7 +129,6 @@ Calculator createCalculator(bool inRepeat, double result) {
             std::cin >> y;
         }
     }
-    printf("%f %f", x, y);
 
     if((inRepeat == false && o == Calculator::Operators::a) || 
     (inRepeat == false && o == Calculator::Operators::s) ||
