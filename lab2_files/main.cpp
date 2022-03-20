@@ -7,6 +7,8 @@
 int main() {
 
     bool inRepeat = false;
+    double x, y;
+    double opDouble;
     double result = 0;
     std::map<std::string, double> myMap;
 
@@ -16,12 +18,15 @@ int main() {
 
         // pass Calculator to calculate()
         myMap = calculate(myCalculator);
+        x = myMap.at("x");
+        y = myMap.at("y");
+        opDouble = myMap.at("opDouble");
         result = myMap.at("result");
 
         //print result with operands and operator
 
         // print result to file
-        printOutput(result);
+        printOutput(x, y, opDouble, result);
 
         inRepeat = repeat(result);
 

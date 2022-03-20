@@ -8,8 +8,10 @@ std::map<std::string, double> calculate(Calculator myCalculator);
 Calculator createCalculator(bool inRepeat, double result);
 
 // printOutput() function
-void printOutput(double result);
+void printOutput(double x, double y, double opDouble, double result);
 
 bool repeat(double result);
+
+char convertOpDoubleToChar(double opDouble);
 
 #endif

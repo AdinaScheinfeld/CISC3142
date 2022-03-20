@@ -75,7 +75,7 @@ std::map<std::string, double> calculate(Calculator myCalculator) {
     // return x, y, op and result
     myMap.insert(std::pair<std::string, double>("x", myCalculator.x));
     myMap.insert(std::pair<std::string, double>("y", myCalculator.y));
-    myMap.insert(std::pair<std::string, double>("operator", opDouble));
+    myMap.insert(std::pair<std::string, double>("opDouble", opDouble));
     myMap.insert(std::pair<std::string, double>("result", result));
     
     return myMap;
@@ -124,9 +124,21 @@ Calculator createCalculator(bool inRepeat, double result) {
 
         if(inRepeat == false) {
             std::cin >> x;
+            while(std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore();
+                printf("Please enter a valid operand: ");
+                std::cin >> x;
+            }
         }
         else {
             std::cin >> y;
+            while(std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore();
+                printf("Please enter a valid operand: ");
+            std::cin >> y;
+            }
         }
     }
 
@@ -136,6 +148,12 @@ Calculator createCalculator(bool inRepeat, double result) {
     (inRepeat == false && o == Calculator::Operators::d)) {
         printf("Please enter another operand: ");
         std::cin >> y;
+        while(std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore();
+            printf("Please enter a valid operand: ");
+            std::cin >> y;
+        }
     }
 
     // create instance of Calculator
@@ -144,14 +162,51 @@ Calculator createCalculator(bool inRepeat, double result) {
     return myCalculator;
 }
 
-void printOutput(double result) {
+char convertOpDoubleToChar(double opDouble) {
+    if(opDouble == 0) {
+        return '+';
+    }
+    else if(opDouble == 1) {
+        return '-';
+    }
+    else if(opDouble == 2) {
+        return '*';
+    }
+    else if(opDouble == 3) {
+        return '/';
+    }
+    else if(opDouble == 4) {
+        return 's';
+    }
+    else if(opDouble == 5) {
+        return 'n';
+    }
+    else{
+        return 'e';
+    }
+}
+
+void printOutput(double x, double y, double opDouble, double result) {
+
+    char op;
 
     // create file to hold output
     FILE * pFile;
     pFile = fopen("output.txt", "a");
 
     // display result
-    fprintf(pFile, "Your result is: %.2f.\n", result);
+    op = convertOpDoubleToChar(opDouble);
+    if(opDouble == 'e') {
+        printf("Invalid operator.");
+        std::exit(EXIT_FAILURE);
+    }
+
+    if(opDouble == 4 || opDouble == 5) {
+        fprintf(pFile, "Operand(s): %.2f; Operator: %c; Result: %.2f.\n", x, op, result);
+    }
+    else {
+        fprintf(pFile, "Operand(s): %.2f, %.2f; Operator: %c; Result: %.2f.\n", x, y, op, result);
+    }
 
     // close the output file
     fclose(pFile);
