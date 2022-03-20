@@ -6,10 +6,19 @@
 
 int main() {
 
+    // initialize boolean to indicate whether in repeat mode
     bool inRepeat = false;
+
+    // declare variables to hold operands
     double x, y;
+
+    // declare variable to hold operator
     double opDouble;
+
+    // initialize variable to hold result
     double result = 0;
+
+    // declare map to hold operands, operator, and result
     std::map<std::string, double> myMap;
 
     do {
@@ -18,16 +27,17 @@ int main() {
 
         // pass Calculator to calculate()
         myMap = calculate(myCalculator);
+
+        // extract operands, operator, and result from myMap
         x = myMap.at("x");
         y = myMap.at("y");
         opDouble = myMap.at("opDouble");
         result = myMap.at("result");
 
-        //print result with operands and operator
-
         // print result to file
         printOutput(x, y, opDouble, result);
 
+        // call repeat() function to determine whether user would like to perform another operation
         inRepeat = repeat(result);
 
     } while(inRepeat == true);
