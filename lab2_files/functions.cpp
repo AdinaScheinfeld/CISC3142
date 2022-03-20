@@ -256,7 +256,7 @@ void printOutput(double x, double y, double opDouble, double result) {
 
     // create file to hold output
     FILE * pFile;
-    pFile = fopen("output.txt", "a");
+    pFile = fopen("lab2_files/output.txt", "a");
 
     // use convertOpDoubleToChar to convert opDouble to a character and store the result in op
     op = convertOpDoubleToChar(opDouble);
