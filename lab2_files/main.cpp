@@ -38,7 +38,7 @@ int main() {
         printOutput(x, y, opDouble, result);
 
         // call repeat() function to determine whether user would like to perform another operation
-        inRepeat = repeat(result);
+        inRepeat = repeat();
 
     } while(inRepeat == true);
 

@@ -14,6 +14,6 @@ char convertOpDoubleToChar(double opDouble);
 void printOutput(double x, double y, double opDouble, double result);
 
 // repeat() function
-bool repeat(double result);
+bool repeat();
 
 #endif
