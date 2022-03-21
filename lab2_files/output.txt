@@ -1,0 +1,12 @@
+Operand(s): 3.20, 7.10; Operator: +; Result: 10.30.
+Operand(s): 10.30, 0.30; Operator: -; Result: 10.00.
+Operand(s): 10.00, 65.00; Operator: *; Result: 650.00.
+Operand(s): 650.00, 2.00; Operator: /; Result: 325.00.
+Operand(s): 325.00; Operator: s; Result: 18.03.
+Operand(s): 18.03; Operator: n; Result: -18.03.
+Operand(s): 432.20, 90.00; Operator: +; Result: 522.20.
+Operand(s): 522.20, 9.30; Operator: -; Result: 512.90.
+Operand(s): 512.90, 1.10; Operator: *; Result: 564.19.
+Operand(s): 564.19, 7.00; Operator: /; Result: 80.60.
+Operand(s): 80.60; Operator: s; Result: 8.98.
+Operand(s): 8.98; Operator: n; Result: -8.98.

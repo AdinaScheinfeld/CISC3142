@@ -1,0 +1,54 @@
+Script started on Mon Mar 21 14:47:46 2022
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
+Please enter an operand: 3.2
+Please enter another operand: 7.1
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): -
+Please enter an operand: 0.30
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): 21
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
+Please enter an operand: 65
+Would you like to perform another operation (y/n)? /
+Please enter y for yes or n for no: n y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 2
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Would you like to perform another operation (y/n)? n y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): u
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
+Please enter an operand: 432.2
+Please enter another operand: 90
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): -
+Please enter an operand: 9.3
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
+Please enter an operand: 1.1
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 7
+Would you like to perform another operation (y/n)? i
+Please enter y for yes or n for no: y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): t
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ exit
+exit
+
+Script done on Mon Mar 21 14:51:31 2022

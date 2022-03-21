@@ -26,4 +26,5 @@ All code runs from the project root under the default `main` branch with the com
 
 ### Testing
 
-Output from code tests can be found in [output.txt](output.txt).
+- [output.txt](output.txt) contains the output from testing the calculator.
+- [outputLog.txt](outputLog.txt) contains the console input and output from when the code was tested. 
