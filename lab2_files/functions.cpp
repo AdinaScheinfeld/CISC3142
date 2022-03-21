@@ -282,7 +282,7 @@ void printOutput(double x, double y, double opDouble, double result) {
 }
 
 // function check if user would like to perform another operation
-bool repeat(double result) {
+bool repeat() {
 
     // declare variables
     bool inRepeat;
