@@ -1,7 +1,7 @@
-#include "structures.h"
-
 #include <iostream>
 #include <map>
+
+#include "structures.h"
 
 // calculate function
 std::map<std::string, double> calculate(Calculator myCalculator) {
