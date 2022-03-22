@@ -22,7 +22,7 @@ All code compiles in C++14 standard.
 
 ### How to use?
 
-All code runs from the project root under the default `main` branch with the command `make lab2`. 
+All code runs from the project root under the default `main` branch with the command `make lab2`. After that target is run, the user will be promped to enter an operator and one or more operands depending on the requirements of the selected operator. After that operation in executed, the user will be prompted to determine whether they want to execute another operation on the calculator or whether they want to terminate the program. Error checking ensures that the user only enters valid operators (+ for addition, - for subtraction, * for multiplication, / for division, s for square root, and n for negation) and valid operands (positive or negative integer or floating point values). Further error checking ensures that the user-entered operands are legal for the user-selected operation (i.e. An error message will be printed and the program will terminate if the user attempts to divide by 0 or if the user attempts to calculate the square root of a negative number).
 
 ### Testing
 
