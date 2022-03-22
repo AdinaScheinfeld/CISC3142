@@ -55,7 +55,8 @@ std::map<std::string, double> calculate(Calculator myCalculator) {
 
             // check if denominator is zero
             if(myCalculator.y == 0) {
-                printf("Division by zero is undefined.");
+                printf("Division by zero is undefined.\n");
+                std::exit(EXIT_FAILURE);
             }
             else {
                 // calculate the quotient of x and y
@@ -71,8 +72,9 @@ std::map<std::string, double> calculate(Calculator myCalculator) {
         case Calculator::Operators::r:
 
             // check if operand is less than 0
-            if(myCalculator.y < 0) {
-                printf("Square root of a negative number is undefined.");
+            if(myCalculator.x < 0) {
+                printf("Square root of a negative number is undefined.\n");
+                std::exit(EXIT_FAILURE);
             }
             else {
                 // calculate the square root of x
