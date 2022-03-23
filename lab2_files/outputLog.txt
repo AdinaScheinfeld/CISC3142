@@ -1,4 +1,4 @@
-Script started on Mon Mar 21 14:47:46 2022
+Script started on Wed Mar 23 10:53:15 2022
 
 The default interactive shell is now zsh.
 To update your account to use zsh, please run `chsh -s /bin/zsh`.
@@ -6,49 +6,179 @@ For more details, please visit https://support.apple.com/kb/HT208050.
 [?1034hbash-3.2$ make lab2
 g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
 Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
-Please enter an operand: 3.2
-Please enter another operand: 7.1
+Please enter an operand: 99.1
+Please enter another operand: 0.9
 Would you like to perform another operation (y/n)? y
 Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): -
-Please enter an operand: 0.30
-Would you like to perform another operation (y/n)? y
-Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): 21
-Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
-Please enter an operand: 65
-Would you like to perform another operation (y/n)? /
-Please enter y for yes or n for no: n y
-Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 82.7
+Would you like to perform another operation (y/n)? y\ 
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
 Please enter an operand: 2
 Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 16.66 
+Would you like to perform another operation (y/n)? y
 Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
-Would you like to perform another operation (y/n)? n y
+Would you like to perform another operation (y/n)? y
 Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
 Would you like to perform another operation (y/n)? n
 Ok, thank you for using the calculator.
 bash-3.2$ make lab2
 g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
-Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): u
-Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
-Please enter an operand: 432.2
-Please enter another operand: 90
-Would you like to perform another operation (y/n)? y
-Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): -
-Please enter an operand: 9.3
-Would you like to perform another operation (y/n)? y
-Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
-Please enter an operand: 1.1
-Would you like to perform another operation (y/n)? y
-Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
-Please enter an operand: 7
-Would you like to perform another operation (y/n)? i
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): 4
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): f
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
+Please enter an operand: 66.7
+Would you like to perform another operation (y/n)? m
+Please enter y for yes or n for no: i
 Please enter y for yes or n for no: y
 Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Square root of a negative number is undefined.
+make: *** [lab2] Error 1
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 89l .3
+Please enter another operand: 0
+Division by zero is undefined.
+make: *** [lab2] Error 1
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 34
+Please enter another operand: s
+Please enter a valid operand: .
+Please enter a valid operand: 9
 Would you like to perform another operation (y/n)? y
-Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): t
-Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): -
+Please enter an operand: -222.2
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
+Please enter an operand: 0.00001
+Please enter another operand: 6 8
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
+Please enter an operand: 5
+Would you like to perform another operation (y/n)? l
+Please enter y for yes or n for no: y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
+Please enter an operand: 77, ,3
+Would you like to perform another operation (y/n)? Please enter y for yes or n for no: Please enter y for yes or n for no: ,
+Please enter y for yes or n for no: y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
+Please enter an operand: 89.0
+Would you like to perform another operation (y/n)? m n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): 9
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): h
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): .
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: n
+Please enter a valid operand: 78
+Please enter another operand: 9000
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
+Please enter an operand: 7
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Square root of a negative number is undefined.
+make: *** [lab2] Error 1
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Please enter an operand: 9
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
+Please enter an operand: 1
+Please enter another operand: 2
+Would you like to perform another operation (y/n)? 3
+Please enter y for yes or n for no: y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): 3
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): y
+Please enter a valid operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
+Please enter an operand: 3
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): +
+Please enter an operand: 4
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): -
+Please enter an operand: 90
+Please enter another operand: 80
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): -
+Please enter an operand: 7
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): 1 -
+Please enter an operand: 1
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
+Please enter an operand: 2
+Please enter another operand: 3 4
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
+Please enter an operand: 6
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): *
+Please enter an operand: 8
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 100
+Please enter another operand: 2
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 2
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): /
+Please enter an operand: 2
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Please enter an operand: 64
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): s
+Would you like to perform another operation (y/n)? n
+Ok, thank you for using the calculator.
+bash-3.2$ make lab2
+g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
+Please enter an operand: 1.1
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
+Would you like to perform another operation (y/n)? y
+Please enter an operator (use + for addition, - for subtraction, * for multiplication, / for division, s for square root, or n for negation): n
 Would you like to perform another operation (y/n)? n
 Ok, thank you for using the calculator.
 bash-3.2$ exit
 exit
 
-Script done on Mon Mar 21 14:51:31 2022
+Script done on Wed Mar 23 11:06:08 2022

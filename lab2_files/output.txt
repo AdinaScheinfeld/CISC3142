@@ -1,12 +1,37 @@
-Operand(s): 3.20, 7.10; Operator: +; Result: 10.30.
-Operand(s): 10.30, 0.30; Operator: -; Result: 10.00.
-Operand(s): 10.00, 65.00; Operator: *; Result: 650.00.
-Operand(s): 650.00, 2.00; Operator: /; Result: 325.00.
-Operand(s): 325.00; Operator: s; Result: 18.03.
-Operand(s): 18.03; Operator: n; Result: -18.03.
-Operand(s): 432.20, 90.00; Operator: +; Result: 522.20.
-Operand(s): 522.20, 9.30; Operator: -; Result: 512.90.
-Operand(s): 512.90, 1.10; Operator: *; Result: 564.19.
-Operand(s): 564.19, 7.00; Operator: /; Result: 80.60.
-Operand(s): 80.60; Operator: s; Result: 8.98.
-Operand(s): 8.98; Operator: n; Result: -8.98.
+Operand(s): 99.10, 0.90; Operator: +; Result: 100.00.
+Operand(s): 100.00, 82.70; Operator: -; Result: 17.30.
+Operand(s): 17.30, 2.00; Operator: *; Result: 34.60.
+Operand(s): 34.60, 16.60; Operator: /; Result: 2.08.
+Operand(s): 2.08; Operator: s; Result: 1.44.
+Operand(s): 1.44; Operator: n; Result: -1.44.
+Operand(s): 66.70; Operator: n; Result: -66.70.
+Operand(s): 34.00, 9.00; Operator: /; Result: 3.78.
+Operand(s): 3.78, -222.20; Operator: -; Result: 225.98.
+Operand(s): 0.00, 8.00; Operator: *; Result: 0.00.
+Operand(s): 5.00; Operator: n; Result: -5.00.
+Operand(s): -5.00, 77.00; Operator: *; Result: -385.00.
+Operand(s): -385.00, 89.00; Operator: +; Result: -296.00.
+Operand(s): 78.00, 9000.00; Operator: /; Result: 0.01.
+Operand(s): 0.01, 7.00; Operator: +; Result: 7.01.
+Operand(s): 7.01; Operator: n; Result: -7.01.
+Operand(s): 9.00; Operator: s; Result: 3.00.
+Operand(s): 3.00; Operator: s; Result: 1.73.
+Operand(s): 1.73; Operator: s; Result: 1.32.
+Operand(s): 1.00, 2.00; Operator: +; Result: 3.00.
+Operand(s): 3.00, 3.00; Operator: +; Result: 6.00.
+Operand(s): 6.00, 4.00; Operator: +; Result: 10.00.
+Operand(s): 90.00, 80.00; Operator: -; Result: 10.00.
+Operand(s): 10.00, 7.00; Operator: -; Result: 3.00.
+Operand(s): 3.00, 1.00; Operator: -; Result: 2.00.
+Operand(s): 2.00, 4.00; Operator: *; Result: 8.00.
+Operand(s): 8.00, 6.00; Operator: *; Result: 48.00.
+Operand(s): 48.00, 8.00; Operator: *; Result: 384.00.
+Operand(s): 100.00, 2.00; Operator: /; Result: 50.00.
+Operand(s): 50.00, 2.00; Operator: /; Result: 25.00.
+Operand(s): 25.00, 2.00; Operator: /; Result: 12.50.
+Operand(s): 64.00; Operator: s; Result: 8.00.
+Operand(s): 8.00; Operator: s; Result: 2.83.
+Operand(s): 2.83; Operator: s; Result: 1.68.
+Operand(s): 1.10; Operator: n; Result: -1.10.
+Operand(s): -1.10; Operator: n; Result: 1.10.
+Operand(s): 1.10; Operator: n; Result: -1.10.
