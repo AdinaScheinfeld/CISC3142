@@ -6,13 +6,13 @@
 
 int main() {
 
-    // initialize boolean to indicate whether in repeat mode
+    // initialize a boolean to indicate whether in repeat mode
     bool inRepeat = false;
 
     // declare variables to hold operands
     double x, y;
 
-    // declare variable to hold operator
+    // declare variable to hold double representation of operator
     double opDouble;
 
     // initialize variable to hold result

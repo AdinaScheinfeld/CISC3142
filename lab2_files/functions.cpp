@@ -53,7 +53,7 @@ std::map<std::string, double> calculate(Calculator myCalculator) {
         // division
         case Calculator::Operators::d:
 
-            // check if denominator is zero
+            // print an error message and terminate the program if the user attempts to divide by 0
             if(myCalculator.y == 0) {
                 printf("Division by zero is undefined.\n");
                 std::exit(EXIT_FAILURE);
@@ -71,7 +71,7 @@ std::map<std::string, double> calculate(Calculator myCalculator) {
         // square root
         case Calculator::Operators::r:
 
-            // check if operand is less than 0
+            // print an error message and terminate the program if the user attempts to calculate the square root of a negative number
             if(myCalculator.x < 0) {
                 printf("Square root of a negative number is undefined.\n");
                 std::exit(EXIT_FAILURE);
@@ -100,7 +100,7 @@ std::map<std::string, double> calculate(Calculator myCalculator) {
         // default
         default:
 
-            // if an invalid operator has been used, indicate an error, and exit
+            // if an invalid operator has been attempted, indicate an error, and exit
             printf("error");
             std::exit(EXIT_FAILURE);
     }
@@ -185,7 +185,7 @@ Calculator createCalculator(bool inRepeat, double result) {
         }
     }
 
-    // if not in repeat mode, and the user has selected a binary operator, prompt the user for another operand
+    // if not in repeat mode and the user has selected a binary operator, prompt the user for another operand
     if((inRepeat == false && o == Calculator::Operators::a) || 
     (inRepeat == false && o == Calculator::Operators::s) ||
     (inRepeat == false && o == Calculator::Operators::m) ||
