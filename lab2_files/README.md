@@ -6,11 +6,11 @@ Create a calculator that performs addition, subtraction, multiplication, divisio
 
 ### Problem Solving Techniques
 
-1. When the user enters an operator and one or more operands, the input is passed to the `createCalculator()` function which uses the Calculator struct's constructor to create a Calculator object. 
-2. The Calculator object is passed to the `calculate()` function which performs the operation selcted by the user. 
+1. When the user enters an operator and one or more operands, the input is passed to the `createCalculator()` function which uses the Calculator struct's constructor to create and return a Calculator object. 
+2. The Calculator object is passed to the `calculate()` function which performs the operation selcted by the user and passes back the operands, the operator, and the result in a map. 
 3. The output from `calculate()` is passed to the `printOutput()` function which prints the output of the operation to a file. 
 4. Finally, the `repeat()` function prompts the user to determine whether they would like to perform another operation. 
-    - If the user chooses to perform another operation, they are prompted for a new operator and operand, and step 1 repeats using the newly entered operator and operand. 
+    - If the user chooses to perform another operation, they are prompted for a new operator and operand, and step 1 repeats using the new operator and operand. 
     - If the user chooses not to perform another operation, the program terminates. 
 
 ### Articulation of the Solution
@@ -35,5 +35,5 @@ All code runs from the project root under the default `main` branch with the com
 
 ### Testing
 
-- [output.txt](output.txt) contains the output from testing the calculator. Testing was performed using both appropriate data (to ensure that the program runs correctly) and inappropriate data (to ensure that error checking works correctly).
+- [output.txt](output.txt) contains the output from testing the calculator. Testing was performed using both correct data (to ensure that the program runs correctly) and incorrect data (to ensure that error checking works correctly).
 - [outputLog.txt](outputLog.txt) contains the console input and output from when the code was tested. 
