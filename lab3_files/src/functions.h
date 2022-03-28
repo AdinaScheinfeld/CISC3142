@@ -15,4 +15,7 @@ std::map<std::string, double> findPassRatePerInstructor(std::vector<student> stu
 // findPassRatePerInstructorPerCourse to find the pass rate for each instructor for each course
 std::map<std::string, double> findPassRatePerInstructorPerCourse(std::vector<student> studentGroup, int courseNum);
 
+// findWRatePerInstructor to find the W rate for each instructor
+std::map<std::string, double> findWRatePerInstructor(std::vector<student> studentGroup);
+
 #endif

@@ -48,8 +48,8 @@ std::vector<std::vector<std::string>> readData(std::string fname) {
     return content;
 }
 
-// function to print the keys and values in a map
-void printMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, bool moreData) {
+// function to print the keys and values in a pass map
+void printPassMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, bool moreData) {
 
     // print each key and value in the map if no course number is passed in
     if(courseNum == 0) {
@@ -73,6 +73,37 @@ void printMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, bool
             fprintf(fp, "Instructor ID,Course Number,Pass Rate\n");  
         }
 
+        // print the data to the map
+        for (auto x: myMap) {
+            fprintf(fp, "%s,%i,%f\n", x.first.c_str(), courseNum, x.second);
+        }
+    }
+}
+
+// function to print the keys and values in a pass map
+void printWMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, bool moreData) {
+
+    // print each key and value in the map if no course number is passed in
+    if(courseNum == 0) {
+
+        // if this is the first time the file is being used, print a header
+        if(!moreData) {
+            fprintf(fp, "Instructor ID,W Rate\n");
+        }
+
+        // print the data to the map
+        for(auto x:myMap) {
+            fprintf(fp, "%s,%f\n", x.first.c_str(), x.second);
+        }
+    }
+
+    // print each key and value in the map with a course number, if a course number was passed in
+    else {
+
+        // if this is the first time the file is being used, print a header
+        if(!moreData) {
+            fprintf(fp, "Instructor ID,Course Number,W Rate\n");  
+        }
 
         // print the data to the map
         for (auto x: myMap) {
