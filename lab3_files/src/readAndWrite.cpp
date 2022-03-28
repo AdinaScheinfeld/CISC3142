@@ -49,11 +49,11 @@ std::vector<std::vector<std::string>> readData(std::string fname) {
 }
 
 // function to print the keys and values in a map
-void printMap(FILE *fp, std::map<std::string, int> myMap) {
+void printMap(FILE *fp, std::map<std::string, double> myMap) {
 
     // print each key and value in the map
     for (auto x: myMap) {
-        fprintf(fp, "%s %i\n", x.first.c_str(), x.second);
+        fprintf(fp, "%s,%f\n", x.first.c_str(), x.second);
     }
 }
 

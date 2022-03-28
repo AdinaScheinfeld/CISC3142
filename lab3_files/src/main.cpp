@@ -17,10 +17,10 @@ int main() {
     std::vector<student> myStudents = createStudentGroup();
 
     // calculate the number of passes for each instructor using the findNumPassesPerInstructor() function
-    std::map<std::string, int> instructorMap = findNumPassesPerInstructor(myStudents);
+    std::map<std::string, double> instructorPassRateMap = findPassRatePerInstructor(myStudents);
 
     // use the printMap() function to print each instructor and their number of passes to a file
-    printMap(fp, instructorMap);
+    printMap(fp, instructorPassRateMap);
 
 
     // close the files

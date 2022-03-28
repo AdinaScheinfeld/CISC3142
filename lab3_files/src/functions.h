@@ -9,7 +9,7 @@ student createStudent(std::vector<std::vector<std::string>> myData, int i);
 // createStudentGroup() function to create a group of students
 std::vector<student> createStudentGroup();
 
-// findNumPassesPerInstructor() function to find the number of passes for each instructor
-std::map<std::string, int> findNumPassesPerInstructor(std::vector<student> studentGroup);
+// findPassRatePerInstructor() function to find the number of passes for each instructor
+std::map<std::string, double> findPassRatePerInstructor(std::vector<student> studentGroup);
 
 #endif
