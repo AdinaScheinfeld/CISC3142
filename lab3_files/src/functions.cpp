@@ -5,7 +5,7 @@
 #include "readAndWrite.h"
 #include "structures.h"
 
-// createStudent() function
+// function to create a student
 student createStudent(std::vector<std::vector<std::string>> myData, int i) {
 
     // use the student struct's constructor to create a student
@@ -16,6 +16,7 @@ student createStudent(std::vector<std::vector<std::string>> myData, int i) {
 
 }
 
+// function to create a group of students
 std::vector<student> createStudentGroup() {
 
     // declare a vector to hold the group of students
@@ -60,7 +61,7 @@ std::vector<student> createStudentGroup() {
     return studentGroup;
 }
 
-// findNumPassesPerInstructor() function
+// function to find the pass rate for each instructor
 std::map<std::string, double> findPassRatePerInstructor(std::vector<student> studentGroup) {
 
     // create a map for the instructors and their count of passes
@@ -110,3 +111,60 @@ std::map<std::string, double> findPassRatePerInstructor(std::vector<student> stu
     // return the map of instructors and their count of passes
     return instructorPassRateMap;
 }
+
+// function to find the pass rate for each instructor for each course
+std::map<std::string, double> findPassRatePerInstructorPerCourse(std::vector<student> studentGroup, int courseNum) {
+
+    // create a map for the instructors and their count of passes
+    std::map<std::string, int> instructorPassMap;
+
+    // create a map for the instructors and their total number of students
+    std::map<std::string, int> instructorStudentCountMap;
+
+    // create a map for the instructors and their pass rates
+    std::map<std::string, double> instructorPassRateMap;
+
+    // insert each instructor into each map
+    for(int i=0; i<studentGroup.size(); i++) {
+        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
+        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
+        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
+    }
+
+    // loop through the students and increment the value associated with each instructor of a student who passed
+    // in the course number that was passed to the function
+    // all grades besides F, W, WD, WU, WN, AUD, NC, and FIN are considered to have passed
+    for(int i=0; i<studentGroup.size(); i++) {
+        if(studentGroup[i].grade != "F" && 
+        studentGroup[i].grade != "W" && 
+        studentGroup[i].grade != "WD" && 
+        studentGroup[i].grade != "WU" && 
+        studentGroup[i].grade != "WN" &&
+        studentGroup[i].grade != "AUD" &&
+        studentGroup[i].grade != "NC" &&
+        studentGroup[i].grade != "FIN" &&
+        studentGroup[i].courseno == courseNum)
+            instructorPassMap[studentGroup[i].instructorid]++;
+    }
+
+    // loop through the students and increment the value associated with each instructor of a student
+    // in the course number that was passed in
+    for(int i=0; i<studentGroup.size(); i++) {
+        if(studentGroup[i].courseno == courseNum) {
+            instructorStudentCountMap[studentGroup[i].instructorid]++;
+        }
+    }
+
+    // calculate the pass rate of each instructor and add the pass rates to the instructorPassRateMap
+    for(auto x: instructorStudentCountMap) {
+        for(auto y: instructorPassMap) {
+            if(x.first == y.first) {
+                instructorPassRateMap.insert(std::pair<std::string, double> (x.first, (double)y.second/x.second));
+            }
+        }
+    }
+
+    // return the map of instructors and their count of passes
+    return instructorPassRateMap;
+}
+

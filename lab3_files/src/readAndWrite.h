@@ -5,6 +5,6 @@
 std::vector<std::vector<std::string>> readData(std::string fname);
 
 // printMap() function to print the contents of a map
-void printMap(FILE *fp, std::map<std::string, double> myMap);
+void printMap(FILE *fp, std::map<std::string, double> myMap, int courseNum=0, bool moreData=false);
 
 #endif
