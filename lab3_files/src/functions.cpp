@@ -298,6 +298,8 @@ double passRatePerTerm(std::vector<term> termGroup, std::vector<std::string> ter
         }
     }
 
+    std::cout << totalStudents << " " << totalPassingStudents << std::endl;
+
     // return the pass rate for the passed in term
     return totalPassingStudents / totalStudents;
 }

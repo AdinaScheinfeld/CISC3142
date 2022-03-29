@@ -112,3 +112,17 @@ void printWMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, boo
     }
 }
 
+// function to print a header with two strings to a file
+void printHeader(FILE *fp, std::string firstColumn, std::string secondColumn) {
+
+    // print the headers that were passed in to the file that was passed in
+    fprintf(fp, "%s,%s\n", firstColumn.c_str(), secondColumn.c_str());
+}
+
+// function to print a string and a double to a file
+void printStringAndDouble(FILE *fp, std::string s, double d) {
+
+    // print the string and the double to the file that was passed in
+    fprintf(fp, "%s,%f\n", s.c_str(), d);
+}
+

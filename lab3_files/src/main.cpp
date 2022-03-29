@@ -26,6 +26,10 @@ int main() {
     FILE *fp4;
     fp4 = fopen("../output/output4.csv", "w");
 
+    // create and open a file for the Fall vs Spring pass rate for each course
+    FILE *fp5;
+    fp5 = fopen("../output/output5.csv", "w");
+
     // use the createStudentGroup() function to create a group of students
     std::vector<student> myStudents = createStudentGroup();
 
@@ -70,10 +74,17 @@ int main() {
     printWMap(fp4, instructorPassRateMap3115, 3115, true);
     printWMap(fp4, instructorPassRateMap3130, 3130, true);
 
-    // calculate the pass rate for the fall term
+    // calculate the pass rate for the fall term and spring term
     double passRateFall = passRatePerTerm(myTerms, fallTerm);
-    std::cout << passRateFall << std::endl;
-    // UP TO HERE - add comments and properly format pass rate for fall and spring
+    double passRateSpring = passRatePerTerm(myTerms, springTerm);
+    std::cout << passRateSpring << std::endl;
+    
+    // print header to file
+    printHeader(fp5, "Term", "Pass Rate");
+   
+    // print fall and spring pass rates to file
+    printStringAndDouble(fp5, "Fall", passRateFall);
+    printStringAndDouble(fp5, "Spring", passRateSpring);
 
     // close the files
     fclose(fp1);

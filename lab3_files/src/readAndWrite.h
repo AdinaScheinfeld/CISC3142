@@ -10,4 +10,10 @@ void printPassMap(FILE *fp, std::map<std::string, double> myMap, int courseNum=0
 // printWMap() function to print the contents of a W map
 void printWMap(FILE *fp, std::map<std::string, double> myMap, int courseNum=0, bool moreData=false);
 
+// printHeader() function to print a header to a file
+void printHeader(FILE *fp, std::string firstColumn, std::string secondColumn);
+
+// printStringAndDouble() function to print a string and a double to a file
+void printStringAndDouble(FILE *fp, std::string s, double d);
+
 #endif
