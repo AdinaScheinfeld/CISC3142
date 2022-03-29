@@ -6,7 +6,7 @@
 #include "structures.h"
 #include "aggFunctions.h"
 
-// function to create a student
+// function to create a student object
 student createStudent(std::vector<std::vector<std::string>> myData, int i) {
 
     // use the student struct's constructor to create a student
@@ -14,6 +14,16 @@ student createStudent(std::vector<std::vector<std::string>> myData, int i) {
 
     // return the created student
     return myStudent;
+}
+
+// function to create a term object
+term createTerm(std::vector<std::vector<std::string>> myData, int i) {
+
+    // use the term's constructor to create a term object
+    term myTerm (myData[i][0], myData[i][3], myData[i][5]);
+
+    // return the create term object
+    return myTerm;
 }
 
 // function to create a group of students
@@ -59,6 +69,51 @@ std::vector<student> createStudentGroup() {
 
     // return the student group
     return studentGroup;
+}
+
+// function to create a group of term object
+std::vector<term> createTermGroup() {
+
+    // declare a vector to hold the group of term objects
+    std::vector<term> termGroup;
+
+    // read in 1115 data, 3115 data, and 3130 data
+    std::vector<std::vector<std::string>> myData1115 = readData("../data/allFiles/1115.csv");
+    std::vector<std::vector<std::string>> myData3115 = readData("../data/allFiles/3115.csv");
+    std::vector<std::vector<std::string>> myData3130 = readData("../data/allFiles/3130.csv");
+
+    // add 1115 terms to termGroup
+    for(int i=0; i<myData1115.size(); i++) {
+
+        // create a term from the 1115 data
+        term myTerm = createTerm(myData1115, i);
+
+        // add the term to the termGroup
+        termGroup.push_back(myTerm);
+    }
+
+    // add 3115 terms to termGroup
+    for(int i=0; i<myData3115.size(); i++) {
+
+        // create a term from the 3115 data
+        term myTerm = createTerm(myData3115, i);
+
+        // add the term to the termGroup
+        termGroup.push_back(myTerm);
+    }
+
+    // add 3130 terms to termGroup
+    for(int i=0; i<myData3130.size(); i++) {
+
+        // create a term from the 3130 data
+        term myTerm = createTerm(myData3130, i);
+
+        // add the term to the termGroup
+        termGroup.push_back(myTerm);
+    }
+
+    // return the term group
+    return termGroup;
 }
 
 // function to find the pass rate for each instructor
@@ -211,5 +266,39 @@ std::map<std::string, double> findWRatePerInstructorPerCourse(std::vector<studen
 
     // return the map of instructors and their W rate
     return instructorWRateMap;
+}
+
+double passRatePerTerm(std::vector<term> termGroup, std::vector<std::string> termIds) {
+
+    // declare variables
+    double totalStudents = 0;
+    double totalPassingStudents = 0;
+
+    // loop through the term objects and if a student was matriculated during the passed in term, increment totalStudents
+    // if the student passed during that term, increment totalPassingStudents
+    for(int i=0; i<termGroup.size(); i++) {
+        for(int j=0; j<termIds.size(); j++) {
+
+            // increment totalStudents for each student
+            if(termGroup[i].termid == termIds[j]) {
+                totalStudents++;
+
+                // increment totalPassingStudents for each student who passed
+                if(termGroup[i].grade != "F" && 
+                termGroup[i].grade != "W" && 
+                termGroup[i].grade != "WD" && 
+                termGroup[i].grade != "WU" && 
+                termGroup[i].grade != "WN" &&
+                termGroup[i].grade != "AUD" &&
+                termGroup[i].grade != "NC" &&
+                termGroup[i].grade != "FIN") {
+                    totalPassingStudents++;
+                }
+            }
+        }
+    }
+
+    // return the pass rate for the passed in term
+    return totalPassingStudents / totalStudents;
 }
 

@@ -19,4 +19,18 @@ struct student {
     }
 };
 
+// term struct with EMPLID, termid, grade
+struct term {
+    std::string emplid;
+    std::string termid;
+    std::string grade;
+
+    // term constructor
+    term(std::string sid, std::string tid, std::string g) {
+        emplid = sid;
+        termid = tid;
+        grade = g;
+    }
+};
+
 #endif
