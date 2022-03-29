@@ -4,6 +4,7 @@
 
 #include "readAndWrite.h"
 #include "structures.h"
+#include "aggFunctions.h"
 
 // function to create a student
 student createStudent(std::vector<std::vector<std::string>> myData, int i) {
@@ -13,7 +14,6 @@ student createStudent(std::vector<std::vector<std::string>> myData, int i) {
 
     // return the created student
     return myStudent;
-
 }
 
 // function to create a group of students
@@ -64,21 +64,14 @@ std::vector<student> createStudentGroup() {
 // function to find the pass rate for each instructor
 std::map<std::string, double> findPassRatePerInstructor(std::vector<student> studentGroup) {
 
+    // initialize a map for the instructors and their total number of students
+    std::map<std::string, int> instructorStudentCountMap = countStudentsPerInstructor(studentGroup);
+
     // create a map for the instructors and their count of passes
     std::map<std::string, int> instructorPassMap;
 
-    // create a map for the instructors and their total number of students
-    std::map<std::string, int> instructorStudentCountMap;
-
     // create a map for the instructors and their pass rates
     std::map<std::string, double> instructorPassRateMap;
-
-    // insert each instructor into each map
-    for(int i=0; i<studentGroup.size(); i++) {
-        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-    }
 
     // loop through the students and increment the value associated with each instructor of a student who passed
     // all grades besides F, W, WD, WU, WN, AUD, NC, and FIN are considered to have passed
@@ -92,11 +85,6 @@ std::map<std::string, double> findPassRatePerInstructor(std::vector<student> stu
         studentGroup[i].grade != "NC" &&
         studentGroup[i].grade != "FIN")
             instructorPassMap[studentGroup[i].instructorid]++;
-    }
-
-    // loop through the students and increment the value associated with each instructor of a student
-    for(int i=0; i<studentGroup.size(); i++) {
-        instructorStudentCountMap[studentGroup[i].instructorid]++;
     }
 
     // calculate the pass rate of each instructor and add the pass rates to the instructorPassRateMap
@@ -115,21 +103,14 @@ std::map<std::string, double> findPassRatePerInstructor(std::vector<student> stu
 // function to find the pass rate for each instructor for each course
 std::map<std::string, double> findPassRatePerInstructorPerCourse(std::vector<student> studentGroup, int courseNum) {
 
+    // initialize a map for the instructors and their total number of students
+    std::map<std::string, int> instructorStudentCountMap = countStudentsPerInstructor(studentGroup, courseNum);
+    
     // create a map for the instructors and their count of passes
     std::map<std::string, int> instructorPassMap;
 
-    // create a map for the instructors and their total number of students
-    std::map<std::string, int> instructorStudentCountMap;
-
     // create a map for the instructors and their pass rates
     std::map<std::string, double> instructorPassRateMap;
-
-    // insert each instructor into each map
-    for(int i=0; i<studentGroup.size(); i++) {
-        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-        instructorPassMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-    }
 
     // loop through the students and increment the value associated with each instructor of a student who passed
     // in the course number that was passed to the function
@@ -145,14 +126,6 @@ std::map<std::string, double> findPassRatePerInstructorPerCourse(std::vector<stu
         studentGroup[i].grade != "FIN" &&
         studentGroup[i].courseno == courseNum)
             instructorPassMap[studentGroup[i].instructorid]++;
-    }
-
-    // loop through the students and increment the value associated with each instructor of a student
-    // in the course number that was passed in
-    for(int i=0; i<studentGroup.size(); i++) {
-        if(studentGroup[i].courseno == courseNum) {
-            instructorStudentCountMap[studentGroup[i].instructorid]++;
-        }
     }
 
     // calculate the pass rate of each instructor and add the pass rates to the instructorPassRateMap
@@ -171,21 +144,14 @@ std::map<std::string, double> findPassRatePerInstructorPerCourse(std::vector<stu
 // function to find the W rate for each instructor
 std::map<std::string, double> findWRatePerInstructor(std::vector<student> studentGroup) {
 
+    // initialize a map for the instructors and their total number of students
+    std::map<std::string, int> instructorStudentCountMap = countStudentsPerInstructor(studentGroup);
+    
     // create a map for the instructors and their count of Ws
     std::map<std::string, int> instructorWMap;
 
-    // create a map for the instructors and their total number of students
-    std::map<std::string, int> instructorStudentCountMap;
-
     // create a map for the instructors and their W rates
     std::map<std::string, double> instructorWRateMap;
-
-    // insert each instructor into each map
-    for(int i=0; i<studentGroup.size(); i++) {
-        instructorWMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-        instructorWMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-        instructorWMap.insert(std::pair<std::string, int> (studentGroup[i].instructorid, 0));
-    }
 
     // loop through the students and increment the value associated with each instructor of a student who received a W
     // W, WD, WU, and WN are considered Ws
@@ -197,9 +163,41 @@ std::map<std::string, double> findWRatePerInstructor(std::vector<student> studen
             instructorWMap[studentGroup[i].instructorid]++;
     }
 
-    // loop through the students and increment the value associated with each instructor of a student
+    // calculate the W rate of each instructor and add the W rates to the instructorWRateMap
+    for(auto x: instructorStudentCountMap) {
+        for(auto y: instructorWMap) {
+            if(x.first == y.first) {
+                instructorWRateMap.insert(std::pair<std::string, double> (x.first, (double)y.second/x.second));
+            }
+        }
+    }
+
+    // return the map of instructors and their W rate
+    return instructorWRateMap;
+}
+
+// function to find the W rate for each instructor for each course
+std::map<std::string, double> findWRatePerInstructorPerCourse(std::vector<student> studentGroup, int courseNum) {
+
+    // initialize a map for the instructors and their total number of students
+    std::map<std::string, int> instructorStudentCountMap = countStudentsPerInstructor(studentGroup, courseNum);
+    
+    // create a map for the instructors and their count of Ws
+    std::map<std::string, int> instructorWMap;
+
+    // create a map for the instructors and their W rates
+    std::map<std::string, double> instructorWRateMap;
+
+    // loop through the students and increment the value associated with each instructor of a student who received a W
+    // in the course number that was passed to the function
+    // W, WD, WU, and WN are considered Ws
     for(int i=0; i<studentGroup.size(); i++) {
-        instructorStudentCountMap[studentGroup[i].instructorid]++;
+        if(studentGroup[i].grade == "W" && 
+        studentGroup[i].grade == "WD" && 
+        studentGroup[i].grade == "WU" && 
+        studentGroup[i].grade == "WN" &&
+        studentGroup[i].courseno == courseNum)
+            instructorWMap[studentGroup[i].instructorid]++;
     }
 
     // calculate the W rate of each instructor and add the W rates to the instructorWRateMap
