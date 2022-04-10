@@ -10,25 +10,46 @@
 // main function
 int main() {
 
+    // get current date to use in filenames
+    time_t t;
+    struct tm *tmp;
+    char MY_TIME[50];
+    time(&t);
+    tmp = localtime(&t);
+
+    // convert the date to mm-dd-yyyy format
+    strftime(MY_TIME, sizeof(MY_TIME), "%m-%d-%Y", tmp);
+    std::string dateString(MY_TIME);
+
     // create and open a file for each instructor and their pass rate
+    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp1;
-    fp1 = fopen("../output/output1.csv", "w");
+    std::string filename1 = ("../output/output1-" + dateString + ".csv");
+    fp1 = fopen(filename1.c_str(), "w");
 
     // create and open a file for each instructor and their pass rate per course
+    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp2;
-    fp2 = fopen("../output/output2.csv", "w");
+    std::string filename2 = ("../output/output2-" + dateString + ".csv");
+    fp2 = fopen(filename2.c_str(), "w");
 
     // create and open a file for each instructor and their W rate
+    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp3;
-    fp3 = fopen("../output/output3.csv", "w");
+    std::string filename3 = ("../output/output3-" + dateString + ".csv");
+    fp3 = fopen(filename3.c_str(), "w");
 
     // create and open a file for each instructor and their W rate per coures
+    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp4;
-    fp4 = fopen("../output/output4.csv", "w");
+    std::string filename4 = ("../output/output4-" + dateString + ".csv");
+    fp4 = fopen(filename4.c_str(), "w");
 
     // create and open a file for the Fall vs Spring pass rate for each course
+    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp5;
-    fp5 = fopen("../output/output5.csv", "w");
+    std::string filename5 = ("../output/output5-" + dateString + ".csv");
+    fp5 = fopen(filename5.c_str(), "w");
 
     // use the createStudentGroup() function to create a group of students
     std::vector<student> myStudents = createStudentGroup();
@@ -90,6 +111,10 @@ int main() {
     fclose(fp1);
     fclose(fp2);
     fclose(fp3);
+
+    // UP TO HERE
+
+
 
     // return 0 to indicate successful termination
     return 0;
