@@ -64,15 +64,15 @@ int main() {
     std::vector<std::string> springTerm{"T02", "T06", "T10", "T14", "T18", "T21"};
 
     // calculate the pass rate for each instructor using the findNumPassesPerInstructor() function
-    std::map<std::string, double> instructorPassRateMap = findPassRatePerInstructor(myStudents);
+    std::map<std::string, std::string> instructorPassRateMap = findPassRatePerInstructor(myStudents);
 
     // use the printPassMap() function to print each instructor and their pass rate to a file
     printPassMap(fp1, instructorPassRateMap);
 
     // calculate the pass rate for each instructor for each course using the findNumPassesPerInstructorPerCourse() function
-    std::map<std::string, double> instructorPassRateMap1115 = findPassRatePerInstructorPerCourse(myStudents, 1115);
-    std::map<std::string, double> instructorPassRateMap3115 = findPassRatePerInstructorPerCourse(myStudents, 3115);
-    std::map<std::string, double> instructorPassRateMap3130 = findPassRatePerInstructorPerCourse(myStudents, 3130);
+    std::map<std::string, std::string> instructorPassRateMap1115 = findPassRatePerInstructorPerCourse(myStudents, 1115);
+    std::map<std::string, std::string> instructorPassRateMap3115 = findPassRatePerInstructorPerCourse(myStudents, 3115);
+    std::map<std::string, std::string> instructorPassRateMap3130 = findPassRatePerInstructorPerCourse(myStudents, 3130);
 
     // use the printPassMap() function to print each instructor and their pass rate per course to a file
     printPassMap(fp2, instructorPassRateMap1115, 1115);
@@ -80,15 +80,15 @@ int main() {
     printPassMap(fp2, instructorPassRateMap3130, 3130, true);
 
     // calculte the W rate for each instructor using the findWRatePerInstructor() function
-    std::map<std::string, double> instructorWRateMap = findWRatePerInstructor(myStudents);
+    std::map<std::string, std::string> instructorWRateMap = findWRatePerInstructor(myStudents);
 
     // use the printWMap() function to print each instructor and their W rate to a file
     printWMap(fp3, instructorWRateMap);
 
     // calculate the W rate for each instructor  for each course using the findWRatePerInstructorPerCourse() function
-    std::map<std::string, double> instructorWRateMap1115 = findWRatePerInstructorPerCourse(myStudents, 1115);
-    std::map<std::string, double> instructorWRateMap3115 = findWRatePerInstructorPerCourse(myStudents, 3115);
-    std::map<std::string, double> instructorWRateMap3130 = findWRatePerInstructorPerCourse(myStudents, 3130);
+    std::map<std::string, std::string> instructorWRateMap1115 = findWRatePerInstructorPerCourse(myStudents, 1115);
+    std::map<std::string, std::string> instructorWRateMap3115 = findWRatePerInstructorPerCourse(myStudents, 3115);
+    std::map<std::string, std::string> instructorWRateMap3130 = findWRatePerInstructorPerCourse(myStudents, 3130);
 
     // use the printWMap() function to print each instructor and their pass rate per course to a file
     printWMap(fp4, instructorPassRateMap1115, 1115);
@@ -96,8 +96,8 @@ int main() {
     printWMap(fp4, instructorPassRateMap3130, 3130, true);
 
     // calculate the pass rate for the fall term and spring term
-    double passRateFall = passRatePerTerm(myTerms, fallTerm);
-    double passRateSpring = passRatePerTerm(myTerms, springTerm);
+    std::string passRateFall = passRatePerTerm(myTerms, fallTerm);
+    std::string passRateSpring = passRatePerTerm(myTerms, springTerm);
     
     // print header to file
     printHeader(fp5, "Term", "Pass Rate");

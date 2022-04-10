@@ -15,19 +15,22 @@ std::vector<student> createStudentGroup();
 // createTermGroup() function to create a group of terms
 std::vector<term> createTermGroup();
 
+// formatThreeDecimalPlaces to convert a double to a string rounded to three decimal places
+std::string formatThreeDecimalPlaces(double d);
+
 // findPassRatePerInstructor() function to find the pass rate for each instructor
-std::map<std::string, double> findPassRatePerInstructor(std::vector<student> studentGroup);
+std::map<std::string, std::string> findPassRatePerInstructor(std::vector<student> studentGroup);
 
 // findPassRatePerInstructorPerCourse to find the pass rate for each instructor for each course
-std::map<std::string, double> findPassRatePerInstructorPerCourse(std::vector<student> studentGroup, int courseNum);
+std::map<std::string, std::string> findPassRatePerInstructorPerCourse(std::vector<student> studentGroup, int courseNum);
 
 // findWRatePerInstructor to find the W rate for each instructor
-std::map<std::string, double> findWRatePerInstructor(std::vector<student> studentGroup);
+std::map<std::string, std::string> findWRatePerInstructor(std::vector<student> studentGroup);
 
 // findWRatePerInstructorPerCourse to find the W rate for each instructor for each course
-std::map<std::string, double> findWRatePerInstructorPerCourse(std::vector<student> studentGroup, int courseNum);
+std::map<std::string, std::string> findWRatePerInstructorPerCourse(std::vector<student> studentGroup, int courseNum);
 
 // passRatePerTerm() function to calculate the pass rate for each term
-double passRatePerTerm(std::vector<term> termGroup, std::vector<std::string> termIds);
+std::string passRatePerTerm(std::vector<term> termGroup, std::vector<std::string> termIds);
 
 #endif

@@ -49,7 +49,7 @@ std::vector<std::vector<std::string>> readData(std::string fname) {
 }
 
 // function to print the keys and values in a pass map
-void printPassMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, bool moreData) {
+void printPassMap(FILE *fp, std::map<std::string, std::string> myMap, int courseNum, bool moreData) {
 
     // print each key and value in the map if no course number is passed in
     if(courseNum == 0) {
@@ -61,7 +61,8 @@ void printPassMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, 
 
         // print the data to the map
         for(auto x:myMap) {
-            fprintf(fp, "%s,%f\n", x.first.c_str(), x.second);
+            fprintf(fp, "%s,%s\n", x.first.c_str(), x.second.c_str());
+
         }
     }
 
@@ -75,13 +76,14 @@ void printPassMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, 
 
         // print the data to the map
         for (auto x: myMap) {
-            fprintf(fp, "%s,%i,%f\n", x.first.c_str(), courseNum, x.second);
+            fprintf(fp, "%s,%i,%s\n", x.first.c_str(), courseNum, x.second.c_str());
+
         }
     }
 }
 
 // function to print the keys and values in a pass map
-void printWMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, bool moreData) {
+void printWMap(FILE *fp, std::map<std::string, std::string> myMap, int courseNum, bool moreData) {
 
     // print each key and value in the map if no course number is passed in
     if(courseNum == 0) {
@@ -93,7 +95,7 @@ void printWMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, boo
 
         // print the data to the map
         for(auto x:myMap) {
-            fprintf(fp, "%s,%f\n", x.first.c_str(), x.second);
+            fprintf(fp, "%s,%s\n", x.first.c_str(), x.second.c_str());
         }
     }
 
@@ -107,7 +109,7 @@ void printWMap(FILE *fp, std::map<std::string, double> myMap, int courseNum, boo
 
         // print the data to the map
         for (auto x: myMap) {
-            fprintf(fp, "%s,%i,%f\n", x.first.c_str(), courseNum, x.second);
+            fprintf(fp, "%s,%i,%s\n", x.first.c_str(), courseNum, x.second.c_str());
         }
     }
 }
@@ -119,10 +121,10 @@ void printHeader(FILE *fp, std::string firstColumn, std::string secondColumn) {
     fprintf(fp, "%s,%s\n", firstColumn.c_str(), secondColumn.c_str());
 }
 
-// function to print a string and a double to a file
-void printStringAndDouble(FILE *fp, std::string s, double d) {
+// function to print a string and a double stored as a stringto a file
+void printStringAndDouble(FILE *fp, std::string s, std::string d) {
 
     // print the string and the double to the file that was passed in
-    fprintf(fp, "%s,%f\n", s.c_str(), d);
+    fprintf(fp, "%s,%s\n", s.c_str(), d.c_str());
 }
 
