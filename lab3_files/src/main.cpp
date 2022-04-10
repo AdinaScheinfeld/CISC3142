@@ -24,31 +24,31 @@ int main() {
     // create and open a file for each instructor and their pass rate
     // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp1;
-    std::string filename1 = ("../output/output1-" + dateString + ".csv");
+    std::string filename1 = ("lab3_files/output/output1-" + dateString + ".csv");
     fp1 = fopen(filename1.c_str(), "w");
 
     // create and open a file for each instructor and their pass rate per course
     // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp2;
-    std::string filename2 = ("../output/output2-" + dateString + ".csv");
+    std::string filename2 = ("lab3_files/output/output2-" + dateString + ".csv");
     fp2 = fopen(filename2.c_str(), "w");
 
     // create and open a file for each instructor and their W rate
     // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp3;
-    std::string filename3 = ("../output/output3-" + dateString + ".csv");
+    std::string filename3 = ("lab3_files/output/output3-" + dateString + ".csv");
     fp3 = fopen(filename3.c_str(), "w");
 
     // create and open a file for each instructor and their W rate per coures
     // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp4;
-    std::string filename4 = ("../output/output4-" + dateString + ".csv");
+    std::string filename4 = ("lab3_files/output/output4-" + dateString + ".csv");
     fp4 = fopen(filename4.c_str(), "w");
 
     // create and open a file for the Fall vs Spring pass rate for each course
     // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp5;
-    std::string filename5 = ("../output/output5-" + dateString + ".csv");
+    std::string filename5 = ("lab3_files/output/output5-" + dateString + ".csv");
     fp5 = fopen(filename5.c_str(), "w");
 
     // use the createStudentGroup() function to create a group of students
@@ -98,7 +98,6 @@ int main() {
     // calculate the pass rate for the fall term and spring term
     double passRateFall = passRatePerTerm(myTerms, fallTerm);
     double passRateSpring = passRatePerTerm(myTerms, springTerm);
-    std::cout << passRateSpring << std::endl;
     
     // print header to file
     printHeader(fp5, "Term", "Pass Rate");
@@ -111,10 +110,6 @@ int main() {
     fclose(fp1);
     fclose(fp2);
     fclose(fp3);
-
-    // UP TO HERE
-
-
 
     // return 0 to indicate successful termination
     return 0;

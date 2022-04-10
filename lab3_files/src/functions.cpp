@@ -33,9 +33,9 @@ std::vector<student> createStudentGroup() {
     std::vector<student> studentGroup;
 
     // read in 1115 data, 3115 data, and 3130 data
-    std::vector<std::vector<std::string>> myData1115 = readData("../data/allFiles/1115.csv");
-    std::vector<std::vector<std::string>> myData3115 = readData("../data/allFiles/3115.csv");
-    std::vector<std::vector<std::string>> myData3130 = readData("../data/allFiles/3130.csv");
+    std::vector<std::vector<std::string>> myData1115 = readData("lab3_files/data/allFiles/1115.csv");
+    std::vector<std::vector<std::string>> myData3115 = readData("lab3_files/data/allFiles/3115.csv");
+    std::vector<std::vector<std::string>> myData3130 = readData("lab3_files/data/allFiles/3130.csv");
 
     // add 1115 students to studentGroup
     for(int i=0; i<myData1115.size(); i++) {
@@ -78,9 +78,9 @@ std::vector<term> createTermGroup() {
     std::vector<term> termGroup;
 
     // read in 1115 data, 3115 data, and 3130 data
-    std::vector<std::vector<std::string>> myData1115 = readData("../data/allFiles/1115.csv");
-    std::vector<std::vector<std::string>> myData3115 = readData("../data/allFiles/3115.csv");
-    std::vector<std::vector<std::string>> myData3130 = readData("../data/allFiles/3130.csv");
+    std::vector<std::vector<std::string>> myData1115 = readData("lab3_files/data/allFiles/1115.csv");
+    std::vector<std::vector<std::string>> myData3115 = readData("lab3_files/data/allFiles/3115.csv");
+    std::vector<std::vector<std::string>> myData3130 = readData("lab3_files/data/allFiles/3130.csv");
 
     // add 1115 terms to termGroup
     for(int i=0; i<myData1115.size(); i++) {
@@ -297,8 +297,6 @@ double passRatePerTerm(std::vector<term> termGroup, std::vector<std::string> ter
             }
         }
     }
-
-    std::cout << totalStudents << " " << totalPassingStudents << std::endl;
 
     // return the pass rate for the passed in term
     return totalPassingStudents / totalStudents;
