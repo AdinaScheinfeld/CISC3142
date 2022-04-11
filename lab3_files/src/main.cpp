@@ -8,7 +8,14 @@
 #include "structures.h"
 
 // main function
-int main() {
+int main(int argc, char** argv) {
+
+    // get input file names from command line args
+    std::string inputFile1, inputFile2, inputFile3;
+    inputFile1 = argv[1];
+    inputFile2 = argv[2];
+    inputFile3 = argv[3];
+
 
     // get current date to use in filenames
     time_t t;
@@ -52,10 +59,10 @@ int main() {
     fp5 = fopen(filename5.c_str(), "w");
 
     // use the createStudentGroup() function to create a group of students
-    std::vector<student> myStudents = createStudentGroup();
+    std::vector<student> myStudents = createStudentGroup(inputFile1, inputFile2, inputFile3);
 
     // use the createTermGroup() function to creat a group of terms
-    std::vector<term> myTerms = createTermGroup();
+    std::vector<term> myTerms = createTermGroup(inputFile1, inputFile2, inputFile3);
 
     // create a vector of Fall term numbers
     std::vector<std::string> fallTerm{"T04", "T08", "T12", "T16", "T20", "T23"};

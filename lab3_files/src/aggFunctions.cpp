@@ -28,15 +28,15 @@ term createTerm(std::vector<std::vector<std::string>> myData, int i) {
 }
 
 // function to create a group of students
-std::vector<student> createStudentGroup() {
+std::vector<student> createStudentGroup(std::string inputFile1, std::string inputFile2, std::string inputFile3) {
 
     // declare a vector to hold the group of students
     std::vector<student> studentGroup;
 
     // read in 1115 data, 3115 data, and 3130 data
-    std::vector<std::vector<std::string>> myData1115 = readData("lab3_files/data/allFiles/1115.csv");
-    std::vector<std::vector<std::string>> myData3115 = readData("lab3_files/data/allFiles/3115.csv");
-    std::vector<std::vector<std::string>> myData3130 = readData("lab3_files/data/allFiles/3130.csv");
+    std::vector<std::vector<std::string>> myData1115 = readData(inputFile1);
+    std::vector<std::vector<std::string>> myData3115 = readData(inputFile2);
+    std::vector<std::vector<std::string>> myData3130 = readData(inputFile3);
 
     // add 1115 students to studentGroup
     for(int i=0; i<myData1115.size(); i++) {
@@ -73,15 +73,15 @@ std::vector<student> createStudentGroup() {
 }
 
 // function to create a group of term object
-std::vector<term> createTermGroup() {
+std::vector<term> createTermGroup(std::string inputFile1, std::string inputFile2, std::string inputFile3) {
 
     // declare a vector to hold the group of term objects
     std::vector<term> termGroup;
 
     // read in 1115 data, 3115 data, and 3130 data
-    std::vector<std::vector<std::string>> myData1115 = readData("lab3_files/data/allFiles/1115.csv");
-    std::vector<std::vector<std::string>> myData3115 = readData("lab3_files/data/allFiles/3115.csv");
-    std::vector<std::vector<std::string>> myData3130 = readData("lab3_files/data/allFiles/3130.csv");
+    std::vector<std::vector<std::string>> myData1115 = readData(inputFile1);
+    std::vector<std::vector<std::string>> myData3115 = readData(inputFile2);
+    std::vector<std::vector<std::string>> myData3130 = readData(inputFile3);
 
     // add 1115 terms to termGroup
     for(int i=0; i<myData1115.size(); i++) {
