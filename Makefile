@@ -8,4 +8,4 @@ lab2:
 
 # target to build and run lab 3
 lab3:
-	g++ -std=c++14 lab3_files/src/main.cpp lab3_files/src/readAndWrite.cpp lab3_files/src/functions.cpp lab3_files/src/aggFunctions.cpp -o lab3_files/src/main && ./lab3_files/src/main
+	g++ -std=c++14 lab3_files/src/main.cpp lab3_files/src/readAndWrite.cpp lab3_files/src/aggFunctions.cpp -o lab3_files/src/main && ./lab3_files/src/main
