@@ -4,7 +4,7 @@
 #include <map>
 
 #include "readAndWrite.h"
-#include "functions.h"
+#include "aggFunctions.h"
 #include "structures.h"
 
 // main function
