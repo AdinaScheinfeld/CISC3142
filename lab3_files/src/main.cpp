@@ -121,22 +121,36 @@ int main(int argc, char** argv) {
 
     // HERE
 
-    // create a new student using the Enrollment class
-    Enrollment("1234567890", 1115, myStudents);
+    // create an enrollment object
+    Enrollment e;
+
+    // use the getID() method to get an ID for a new student
+    std::string newID = e.getId();
+
+    // use the getCourse() method to get a course for a new student
+    int newCourse = e.getCourse();
+
+    // create a new student using the Enrollment class and the newID and newCourse that were passed in by the user
+    Enrollment(newID, newCourse, myStudents);
 
     // print the added student's information to a file
     printHeader(fp6, 4, "EMPLID", "Course Number", "Instructor ID", "Grade");
     printAddedStudent(fp6, myStudents);
 
+    // use the getGrade() method to get a grade
+    std::string newGrade = e.getGrade();
+
     // update the added student's grade
-    Enrollment e;
-    e.updateGrade(myStudents.at(myStudents.size()-1), "A");
+    e.updateGrade(myStudents.at(myStudents.size()-1), newGrade);
 
     // print the updated student's information to the file
     printAddedStudent(fp6, myStudents);
 
+    // user the getInstructorId() method to get an instructor id
+    std::string newInstructorID = e.getInstructorId();
+
     // update the added student's instructor
-    e.updateInstructor(myStudents.at(myStudents.size()-1), "I12");
+    e.updateInstructor(myStudents.at(myStudents.size()-1), newInstructorID);
 
     // print the updated student's information to the file
     printAddedStudent(fp6, myStudents);
@@ -145,6 +159,9 @@ int main(int argc, char** argv) {
     fclose(fp1);
     fclose(fp2);
     fclose(fp3);
+    fclose(fp4);
+    fclose(fp5);
+    fclose(fp6);
 
     // return 0 to indicate successful termination
     return 0;
