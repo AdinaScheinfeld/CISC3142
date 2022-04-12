@@ -6,6 +6,7 @@
 #include "readAndWrite.h"
 #include "aggFunctions.h"
 #include "structures.h"
+#include "classes.h"
 
 // main function
 int main(int argc, char** argv) {
@@ -58,6 +59,11 @@ int main(int argc, char** argv) {
     std::string filename5 = ("lab3_files/output/output5-" + dateString + ".csv");
     fp5 = fopen(filename5.c_str(), "w");
 
+    // create and open a file to demonstrate the Enrollment class operations
+    FILE *fp6;
+    std::string filename6 = ("lab3_files/output/output6-" + dateString + ".csv");
+    fp6 = fopen(filename6.c_str(), "w");
+
     // use the createStudentGroup() function to create a group of students
     std::vector<student> myStudents = createStudentGroup(inputFile1, inputFile2, inputFile3);
 
@@ -107,11 +113,33 @@ int main(int argc, char** argv) {
     std::string passRateSpring = passRatePerTerm(myTerms, springTerm);
     
     // print header to file
-    printHeader(fp5, "Term", "Pass Rate");
+    printHeader(fp5, 2, "Term", "Pass Rate");
    
     // print fall and spring pass rates to file
     printStringAndDouble(fp5, "Fall", passRateFall);
     printStringAndDouble(fp5, "Spring", passRateSpring);
+
+    // HERE
+
+    // create a new student using the Enrollment class
+    Enrollment("1234567890", 1115, myStudents);
+
+    // print the added student's information to a file
+    printHeader(fp6, 4, "EMPLID", "Course Number", "Instructor ID", "Grade");
+    printAddedStudent(fp6, myStudents);
+
+    // update the added student's grade
+    Enrollment e;
+    e.updateGrade(myStudents.at(myStudents.size()-1), "A");
+
+    // print the updated student's information to the file
+    printAddedStudent(fp6, myStudents);
+
+    // update the added student's instructor
+    e.updateInstructor(myStudents.at(myStudents.size()-1), "I12");
+
+    // print the updated student's information to the file
+    printAddedStudent(fp6, myStudents);
 
     // close the files
     fclose(fp1);

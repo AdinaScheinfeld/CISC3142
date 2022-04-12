@@ -4,6 +4,8 @@
 #include <sstream>
 #include <map>
 
+#include "structures.h"
+
 // function to read in data
 std::vector<std::vector<std::string>> readData(std::string fname) {
 
@@ -114,11 +116,18 @@ void printWMap(FILE *fp, std::map<std::string, std::string> myMap, int courseNum
     }
 }
 
-// function to print a header with two strings to a file
-void printHeader(FILE *fp, std::string firstColumn, std::string secondColumn) {
+// function to print a header to a file
+void printHeader(FILE *fp, int numColumns, std::string firstColumn, std::string secondColumn, std::string thirdColumn, std::string fourthColumn) {
 
-    // print the headers that were passed in to the file that was passed in
-    fprintf(fp, "%s,%s\n", firstColumn.c_str(), secondColumn.c_str());
+    if(numColumns == 2) {
+        // print the headers that were passed in to the file that was passed in
+        fprintf(fp, "%s,%s\n", firstColumn.c_str(), secondColumn.c_str());
+    }
+
+    else if(numColumns == 4) {
+        // print the headers that were passed in to the file that was passed in
+        fprintf(fp, "%s,%s,%s,%s\n", firstColumn.c_str(), secondColumn.c_str(), thirdColumn.c_str(), fourthColumn.c_str());
+    }
 }
 
 // function to print a string and a double stored as a stringto a file
@@ -126,5 +135,13 @@ void printStringAndDouble(FILE *fp, std::string s, std::string d) {
 
     // print the string and the double to the file that was passed in
     fprintf(fp, "%s,%s\n", s.c_str(), d.c_str());
+}
+
+// function to print the student that was added using the Enrollment class operations
+void printAddedStudent(FILE *fp, std::vector<student> myStudents) {
+
+    // print the new student's information to the file
+    fprintf(fp, "%s,%i,%s,%s\n", myStudents.at(myStudents.size()-1).emplid.c_str(), myStudents.at(myStudents.size()-1).courseno, myStudents.at(myStudents.size()-1).instructorid.c_str(), myStudents.at(myStudents.size()-1).grade.c_str());
+
 }
 

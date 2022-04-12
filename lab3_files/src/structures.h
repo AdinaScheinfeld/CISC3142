@@ -10,13 +10,22 @@ struct student {
     std::string instructorid;
     std::string grade;
 
-    // student constructor
+    // student constructor when provided an emplid, course number, instructor id, and grade
     student(std::string sid, int cn, std::string iid, std::string g) {
         emplid = sid;
         courseno = cn;
         instructorid = iid;
         grade = g;
     }
+
+    // student constructor when provided only an emplid and course number
+    student(std::string sid, int cn) {
+        emplid = sid;
+        courseno = cn; 
+        instructorid = "Unknown";
+        grade = "Unknown";
+    }
+
 };
 
 // term struct with EMPLID, termid, grade
