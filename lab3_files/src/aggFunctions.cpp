@@ -33,12 +33,12 @@ std::vector<student> createStudentGroup(std::string inputFile1, std::string inpu
     // declare a vector to hold the group of students
     std::vector<student> studentGroup;
 
-    // read in 1115 data, 3115 data, and 3130 data
+    // read in 1115 data, 3115 data, and 3130 data using the readData() function
     std::vector<std::vector<std::string>> myData1115 = readData(inputFile1);
     std::vector<std::vector<std::string>> myData3115 = readData(inputFile2);
     std::vector<std::vector<std::string>> myData3130 = readData(inputFile3);
 
-    // add 1115 students to studentGroup
+    // add 1115 students to studentGroup by looping through the 1115 data
     for(int i=0; i<myData1115.size(); i++) {
 
         // create a student from the 1115 data
@@ -48,7 +48,7 @@ std::vector<student> createStudentGroup(std::string inputFile1, std::string inpu
         studentGroup.push_back(myStudent);
     }
 
-    // add 3115 students to studentGroup
+    // add 3115 students to studentGroup by looping through the 3115 data
     for(int i=0; i<myData3115.size(); i++) {
 
         // create a student from the 3115 data
@@ -58,7 +58,7 @@ std::vector<student> createStudentGroup(std::string inputFile1, std::string inpu
         studentGroup.push_back(myStudent);
     }
 
-    // add 3130 students to studentGroup
+    // add 3130 students to studentGroup by looping through the 3130 data
     for(int i=0; i<myData3130.size(); i++) {
 
         // create a student from the 3130 data
@@ -72,10 +72,10 @@ std::vector<student> createStudentGroup(std::string inputFile1, std::string inpu
     return studentGroup;
 }
 
-// function to create a group of term object
+// function to create a term group object
 std::vector<term> createTermGroup(std::string inputFile1, std::string inputFile2, std::string inputFile3) {
 
-    // declare a vector to hold the group of term objects
+    // declare a vector to hold the term group objects
     std::vector<term> termGroup;
 
     // read in 1115 data, 3115 data, and 3130 data
@@ -83,7 +83,7 @@ std::vector<term> createTermGroup(std::string inputFile1, std::string inputFile2
     std::vector<std::vector<std::string>> myData3115 = readData(inputFile2);
     std::vector<std::vector<std::string>> myData3130 = readData(inputFile3);
 
-    // add 1115 terms to termGroup
+    // add 1115 terms to termGroup by looping through the 1115 data
     for(int i=0; i<myData1115.size(); i++) {
 
         // create a term from the 1115 data
@@ -93,7 +93,7 @@ std::vector<term> createTermGroup(std::string inputFile1, std::string inputFile2
         termGroup.push_back(myTerm);
     }
 
-    // add 3115 terms to termGroup
+    // add 3115 terms to termGroup by looping through the 3115 data
     for(int i=0; i<myData3115.size(); i++) {
 
         // create a term from the 3115 data
@@ -103,7 +103,7 @@ std::vector<term> createTermGroup(std::string inputFile1, std::string inputFile2
         termGroup.push_back(myTerm);
     }
 
-    // add 3130 terms to termGroup
+    // add 3130 terms to termGroup by looping throught the 3130 data
     for(int i=0; i<myData3130.size(); i++) {
 
         // create a term from the 3130 data
@@ -308,6 +308,7 @@ std::map<std::string, std::string> findWRatePerInstructorPerCourse(std::vector<s
     return instructorWRateMap;
 }
 
+// function to find the pass rate for each term
 std::string passRatePerTerm(std::vector<term> termGroup, std::vector<std::string> termIds) {
 
     // declare variables

@@ -12,13 +12,11 @@
 int main(int argc, char** argv) {
 
     // get input file names from command line args
-    std::string inputFile1, inputFile2, inputFile3;
-    inputFile1 = argv[1];
-    inputFile2 = argv[2];
-    inputFile3 = argv[3];
+    std::string inputFile1 = argv[1];
+    std::string inputFile2 = argv[2];
+    std::string inputFile3 = argv[3];
 
-
-    // get current date to use in filenames
+    // get current date to use in output file names
     time_t t;
     struct tm *tmp;
     char MY_TIME[50];
@@ -30,36 +28,37 @@ int main(int argc, char** argv) {
     std::string dateString(MY_TIME);
 
     // create and open a file for each instructor and their pass rate
-    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
+    // the naming convention for output files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp1;
     std::string filename1 = ("lab3_files/output/output1-" + dateString + ".csv");
     fp1 = fopen(filename1.c_str(), "w");
 
     // create and open a file for each instructor and their pass rate per course
-    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
+    // the naming convention for output files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp2;
     std::string filename2 = ("lab3_files/output/output2-" + dateString + ".csv");
     fp2 = fopen(filename2.c_str(), "w");
 
     // create and open a file for each instructor and their W rate
-    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
+    // the naming convention for output files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp3;
     std::string filename3 = ("lab3_files/output/output3-" + dateString + ".csv");
     fp3 = fopen(filename3.c_str(), "w");
 
     // create and open a file for each instructor and their W rate per coures
-    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
+    // the naming convention for output files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp4;
     std::string filename4 = ("lab3_files/output/output4-" + dateString + ".csv");
     fp4 = fopen(filename4.c_str(), "w");
 
     // create and open a file for the Fall vs Spring pass rate for each course
-    // the naming convention for files is output<#>-<mm>-<dd>-<yyyy>.csv
+    // the naming convention for output files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp5;
     std::string filename5 = ("lab3_files/output/output5-" + dateString + ".csv");
     fp5 = fopen(filename5.c_str(), "w");
 
     // create and open a file to demonstrate the Enrollment class operations
+    // the naming convention for output files is output<#>-<mm>-<dd>-<yyyy>.csv
     FILE *fp6;
     std::string filename6 = ("lab3_files/output/output6-" + dateString + ".csv");
     fp6 = fopen(filename6.c_str(), "w");
@@ -119,9 +118,7 @@ int main(int argc, char** argv) {
     printStringAndDouble(fp5, "Fall", passRateFall);
     printStringAndDouble(fp5, "Spring", passRateSpring);
 
-    // HERE
-
-    // create an enrollment object
+    // create an enrollment object to use for enrolling a new student and updating their grade and instructor
     Enrollment e;
 
     // use the getID() method to get an ID for a new student
@@ -140,22 +137,22 @@ int main(int argc, char** argv) {
     // use the getGrade() method to get a grade
     std::string newGrade = e.getGrade();
 
-    // update the added student's grade
+    // update the new student's grade
     e.updateGrade(myStudents.at(myStudents.size()-1), newGrade);
 
-    // print the updated student's information to the file
+    // print the new student's updated information to the file
     printAddedStudent(fp6, myStudents);
 
     // user the getInstructorId() method to get an instructor id
     std::string newInstructorID = e.getInstructorId();
 
-    // update the added student's instructor
+    // update the new student's instructor
     e.updateInstructor(myStudents.at(myStudents.size()-1), newInstructorID);
 
-    // print the updated student's information to the file
+    // print the new student's updated information to the file
     printAddedStudent(fp6, myStudents);
 
-    // close the files
+    // close the output files
     fclose(fp1);
     fclose(fp2);
     fclose(fp3);

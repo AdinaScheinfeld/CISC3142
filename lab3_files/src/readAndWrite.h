@@ -18,7 +18,7 @@ void printHeader(FILE *fp, int numColumns, std::string firstColumn, std::string 
 // printStringAndDouble() function to print a string and a double stored as a string to a file
 void printStringAndDouble(FILE *fp, std::string s, std::string d);
 
-// printAddedStudent function to print the student that was added using the Enrollment class operations
+// printAddedStudent() function to print the student that was added using the Enrollment class operations
 void printAddedStudent(FILE *fp, std::vector<student> myStudents);
 
 #endif
