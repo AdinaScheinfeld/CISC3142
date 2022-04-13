@@ -130,7 +130,7 @@ void printHeader(FILE *fp, int numColumns, std::string firstColumn, std::string 
     }
 }
 
-// function to print a string and a double stored as a stringto a file
+// function to print a string and a double stored as a string to a file
 void printStringAndDouble(FILE *fp, std::string s, std::string d) {
 
     // print the string and the double to the file that was passed in
