@@ -1,11 +1,11 @@
-#include <vector>
+#include <cmath>
 #include <iostream>
 #include <map>
-#include <cmath>
+#include <vector>
 
+#include "aggFunctions.h"
 #include "readAndWrite.h"
 #include "structures.h"
-#include "aggFunctions.h"
 
 // function to create a student object
 student createStudent(std::vector<std::vector<std::string>> myData, int i) {

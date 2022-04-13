@@ -1,12 +1,12 @@
-#include <string>
-#include <vector>
 #include <iostream>
 #include <map>
+#include <string>
+#include <vector>
 
-#include "readAndWrite.h"
 #include "aggFunctions.h"
-#include "structures.h"
 #include "classes.h"
+#include "readAndWrite.h"
+#include "structures.h"
 
 // main function
 int main(int argc, char** argv) {

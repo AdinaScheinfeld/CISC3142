@@ -1,8 +1,8 @@
-#include <iostream>
 #include <fstream>
-#include <vector>
-#include <sstream>
+#include <iostream>
 #include <map>
+#include <sstream>
+#include <vector>
 
 #include "structures.h"
 
