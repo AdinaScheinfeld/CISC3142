@@ -65,7 +65,7 @@ All source code is stored in the [src](src) folder, all input data is stored in 
 
 ### Tech Used
 
-All code compiles in C++14 standard. All code is formatted using the Google C++ Style Guide. 
+All code compiles in C++14 standard. All code is formatted using the [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html). 
 
 ### How to use?
 
