@@ -344,7 +344,7 @@ std::string passRatePerTerm(std::vector<term> termGroup, std::vector<std::string
 
     // check to ensure that the passRatePerTermValue has a value
     // if passRatePerTermValue does not have a value, set passRatePerTermValue to -1
-    if(isnan(passRatePerTermValue)) {
+    if(std::isnan(passRatePerTermValue)) {
         passRatePerTermValue = -1;
     }
 
