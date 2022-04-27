@@ -10,7 +10,6 @@ student createStudent(std::vector<std::vector<std::string>> myData, int i);
 term createTerm(std::vector<std::vector<std::string>> myData, int i);
 
 // createStudentGroup() function to create a group of students
-// std::vector<student> createStudentGroup();
 std::vector<student> createStudentGroup(std::string inputFile1, std::string inputFile2, std::string inputFile3);
 
 // createTermGroup() function to create a group of terms
