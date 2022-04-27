@@ -5,3 +5,8 @@ lab1:
 # target to build and run lab 2
 lab2:
 	g++ -std=c++14 lab2_files/main.cpp lab2_files/functions.cpp -o lab2_files/main && lab2_files/main
+
+# target to build and run lab 3
+# the command line arguments are listed after the command to run the object file
+lab3:
+	g++ -std=c++14 lab3_files/src/main.cpp lab3_files/src/readAndWrite.cpp lab3_files/src/aggFunctions.cpp lab3_files/src/classes.cpp -o lab3_files/src/main && ./lab3_files/src/main lab3_files/data/allFiles/1115.csv lab3_files/data/allFiles/3115.csv lab3_files/data/allFiles/3130.csv
