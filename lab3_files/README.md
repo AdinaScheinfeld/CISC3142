@@ -28,8 +28,8 @@ All source code is stored in the [src](src) folder, all input data is stored in 
 
 - [readAndWrite.cpp](src/readAndWrite.cpp) is a file dedicated to functions for file reading and writing. The file contains the `readData()` function, the `printPassMap()` function, the `printWMap()` function, the `printHeader()` function, the `printStringAndDouble()` function, and the `printAddedStudent()` function. 
     - `readData()` takes a string, the filename of a .csv file, as input and returns a vector of vector of strings containing holding the data in the file.
-    - `printPassMap()` takes a pointer to an output file, a map containing pass rates, an int holding a course number, and a boolean indicating whether there is more data, as input and prints each key and value from the map to the provided output file. 
-    - `printWMap()` takes a pointer to an output file, a map containing W rates, an int holding a course number, and a boolean indicating whether there is more data, as input and prints each key and value from the map to the provided output file. 
+    - `printPassMap()` takes a pointer to an output file, a map containing pass rates, an int holding a course number, and a boolean indicating whether there is more data, as input, and prints each key and value from the map to the provided output file. 
+    - `printWMap()` takes a pointer to an output file, a map containing W rates, an int holding a course number, and a boolean indicating whether there is more data, as input, and prints each key and value from the map to the provided output file. 
     - `printHeader()` takes a pointer to an output file, an int indicating the number of headers to print, and that number of strings containing the names of the headers, as input, and prints the headers to the provided file. 
     - `printStringAndDouble()` takes a pointer to an output file, a string, and a double stored as a string, as input, and prints the two strings to the provided output file. 
     - `printAddedStudent()` takes a pointer to an output file and a vector of students as input, and prints the information associated with the last student in the vector to the output file. 
@@ -41,9 +41,9 @@ All source code is stored in the [src](src) folder, all input data is stored in 
     - `createTerm()` takes a vector of vectors of strings containing data read in from the input file and an int indicating which number term to create. The function uses the term struct's constructor to create a term object and returns the term object that was created. 
     - `createStudentGroup()` takes 3 strings with input file names, uses the `readData()` function to read in the data, uses the `createStudent()` function to create student objects using the data, adds all the students to a vector, and returns the group of students stored as a vector.  
     - `createTermGroup()` takes 3 strings with input file names, uses the `readData()` function to read in the data, uses the `createTerm()` function to create term objects using the data, adds all the terms to a vector, and returns the group of terms stored as a vector.  
-    - `formatThreeDecimalPlaces()` is a helper function that takes a double as input and returns that double rounded to the thousanths place, stored as a string. 
+    - `formatThreeDecimalPlaces()` is a helper function that takes a double as input and returns that double rounded to the thousandths place, stored as a string. 
     - `countStudentsPerInstructor()` takes a group of students stored as a vector and a course number as input, and returns a map containing instructors as keys and each instructor's number of students as values.
-    -  `findPassRatePerInstructor()` takes a group of students stored as a vector as input and returns a map containing instructors as keys and each instructor's pass rate as values. A student is considered to have passed a course if they did _not_ receive the grade F, W, WD, WU, WN, AUD, NC, or FIN. 
+    -  `findPassRatePerInstructor()` takes a group of students stored as a vector as input, and returns a map containing instructors as keys and each instructor's pass rate as values. A student is considered to have passed a course if they did _not_ receive the grade F, W, WD, WU, WN, AUD, NC, or FIN. 
     - `findPassRatePerInstructorPerCourse()` takes a group of students stored as a vector and an int containing a course number as input and returns a map containing instructors as keys and each instructor's pass rate for the provided course, as values. A student is considered to have passed a course if they did _not_ receive the grade F, W, WD, WU, WN, AUD, NC, or FIN. 
     - `findWRatePerInstructor()` takes a group of students stored as a vector as input and returns a map containing instructors as keys and each instructor's W (withdrawal) rate as values. A student is considered to have withdrawn from a course if they received a W, WD, WU, or WN.
     - `findWRatePerInstructorPerCourse()` takes a group of students stored as a vector and an int containing a course number as input and returns a map containing instructors as keys and each instructor's W (withdrawal) rate for the provided course, as values. A student is considered to have withdrawn from a course if they received a W, WD, WU, or WN.
@@ -51,8 +51,8 @@ All source code is stored in the [src](src) folder, all input data is stored in 
 
 - [aggFunctions.h](src/aggFunctions.h) is a header file with function declarations for the functions in [aggFunctions.cpp](src/aggFunctions.cpp).
 
-- [classes.cpp](src/classes.cpp) contains the functions definitions for the Enrollment class. The Enrollment class has 2 constructors, an `updateGrade()` function, a `getID()` function, a `getCourse()` function, a `getGrade()` function, and a `getInstructorId()` function.
-    - One constructor takes a student ID, a course number, and a reference to a group of students stored as a vector, and the other constructor is a default constructor that takes no parameters. 
+- [classes.cpp](src/classes.cpp) contains the function definitions for the Enrollment class. The Enrollment class has 2 constructors, an `updateGrade()` function, a `getID()` function, a `getCourse()` function, a `getGrade()` function, and a `getInstructorId()` function.
+    - One of the Enrollment class's constructor takes a student ID, a course number, and a reference to a group of students stored as a vector. The other constructor is a default constructor which takes no parameters. 
     - `updateGrade()` takes a reference to a student object and a string containing a new grade, as input, and updates the student's grade to the grade that was passed in.
     - `updateInstructor()` takes a reference to an instructor object and a string containing a new instructor ID, as input, and updates the student's instructor to the instructor ID that was passed in.
     - `getID()` takes no parameters but prompts the user for a student ID. The function performs error checking to ensure that the ID that was passed in is 5 characters long and begins with the letter E, and returns the ID that was passed in.
@@ -79,6 +79,6 @@ All output files are stored in the [output](output) folder and are named using t
 - `output2.csv` contains a list of instructors and their pass rates per course, rounded to 3 decimal places.
 - `output3.csv` contains a list of instructor IDs with their W rates, rounded to 3 decimal places.
 - `output4.csv` contains a list of instructors and their W rates per course, rounded to 3 decimal places.
-- `output5.csv` contains the Fall and Spring pass rates for each course. 
-- `output6.csv` contains otuput from testing the methods in the Enrollment class. 
+- `output5.csv` contains the Fall and Spring pass rates for each course, rounded to 3 decimal places. 
+- `output6.csv` contains output from testing the methods in the Enrollment class. 
 
